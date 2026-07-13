@@ -1,0 +1,2 @@
+# shopino-bg
+shopino.bg
