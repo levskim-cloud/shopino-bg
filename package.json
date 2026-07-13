@@ -1,0 +1,9 @@
+{
+  "name": "shopino-bg",
+  "version": "1.0.0",
+  "description": "SHOPINO.BG — онлайн магазин за дрехи с бекофис платформа (витрина + Node.js бекенд)",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "license": "UNLICENSED"
+}

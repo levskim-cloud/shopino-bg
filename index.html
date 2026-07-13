@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHOPINO.BG — Онлайн магазин за дрехи</title>
+<meta name="description" content="Онлайн магазин за дрехи и аксесоари — жени, мъже, деца. Доставка с Еконт и Спиди.">
+<meta name="keywords" content="дрехи, онлайн магазин, мода">
+<meta property="og:title" content="SHOPINO.BG">
+<meta property="og:description" content="Онлайн магазин за дрехи и аксесоари.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#2A2A28; --ink-soft:#55534E; --ink-mute:#8B877E;
+  --tan:#C2A278; --tan-dark:#A3854F; --tan-deep:#8A6F42;
+  --tan-light:#EFE5D4; --tan-faint:#F7F2E9;
+  --paper:#FFFFFF; --paper-warm:#FBF9F5; --line:#E8E0D2;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost','Segoe UI',system-ui,sans-serif;
+  --shadow:0 12px 40px rgba(42,42,40,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-weight:400;line-height:1.55}
+button{font-family:var(--sans);cursor:pointer}
+input,select,textarea{font-family:var(--sans);font-size:15px;color:var(--ink)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--tan-light)}
+:focus-visible{outline:2px solid var(--tan-dark);outline-offset:2px}
+
+.topbar{background:var(--ink);color:var(--tan-light);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:8px 16px}
+.maint{background:var(--tan-dark);color:#fff;text-align:center;padding:9px 16px;font-size:13.5px;letter-spacing:.08em}
+header.site{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hwrap{max-width:1240px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:28px}
+.logo{display:flex;align-items:center;gap:12px;flex-shrink:0;cursor:pointer}
+.logo svg{height:44px;width:auto}
+.logo img.custom{height:46px;width:auto;object-fit:contain}
+.logo .word{font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:.22em;white-space:nowrap}
+.logo .word em{font-style:normal;color:var(--tan-dark)}
+nav.main{display:flex;gap:4px;flex:1;flex-wrap:wrap}
+nav.main button{background:none;border:none;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;color:var(--ink-soft);border-bottom:2px solid transparent;transition:.2s}
+nav.main button:hover{color:var(--ink)}
+nav.main button.on{color:var(--ink);border-bottom-color:var(--tan)}
+.hacts{display:flex;align-items:center;gap:8px}
+.search{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:7px 14px;background:var(--paper-warm)}
+.search input{border:none;background:none;outline:none;width:150px;font-size:14px}
+.iconbtn{position:relative;background:none;border:none;padding:9px;border-radius:999px;display:grid;place-items:center;color:var(--ink);transition:.2s}
+.iconbtn:hover{background:var(--tan-faint)}
+.iconbtn svg{width:21px;height:21px}
+.badge{position:absolute;top:2px;right:0;background:var(--tan-dark);color:#fff;font-size:10.5px;font-weight:600;min-width:17px;height:17px;border-radius:999px;display:grid;place-items:center;padding:0 4px}
+
+.hero{background:var(--ink);color:var(--paper-warm);overflow:hidden;position:relative}
+.hero .wrap{max-width:1240px;margin:0 auto;padding:84px 24px 92px;position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hero .eyebrow{font-size:13px;letter-spacing:.34em;text-transform:uppercase;color:var(--tan);margin-bottom:18px}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(40px,5.4vw,68px);line-height:1.06;letter-spacing:.02em}
+.hero h1 span{color:var(--tan)}
+.hero p.sub{margin-top:20px;max-width:52ch;color:#CFC9BE;font-weight:300;font-size:17px}
+.hero .cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 30px;font-size:14px;letter-spacing:.12em;text-transform:uppercase;border:1px solid transparent;transition:.22s}
+.btn-tan{background:var(--tan);color:var(--ink);border-color:var(--tan)}
+.btn-tan:hover{background:var(--tan-dark);border-color:var(--tan-dark);color:#fff}
+.btn-ghost{background:transparent;color:var(--paper-warm);border-color:rgba(255,255,255,.4)}
+.btn-ghost:hover{border-color:var(--tan);color:var(--tan)}
+.btn-ink{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-ink:hover{background:var(--tan-deep);border-color:var(--tan-deep)}
+.btn-line{background:#fff;border-color:var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn[disabled]{opacity:.45;pointer-events:none}
+.hero .hanger{justify-self:center;opacity:.94}
+.hero .hanger svg{width:min(320px,60vw);height:auto}
+.marquee{border-top:1px solid rgba(255,255,255,.14);padding:13px 0;white-space:nowrap;overflow:hidden}
+.marquee span{display:inline-block;padding-right:64px;font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--tan);animation:mq 26s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee span{animation:none}}
+
+/* Банери */
+.banners{max-width:1240px;margin:0 auto;padding:44px 24px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.banner{position:relative;border-radius:16px;overflow:hidden;min-height:190px;display:flex;align-items:flex-end;background:var(--tan-light);cursor:pointer;transition:.25s}
+.banner:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner .ov{position:relative;z-index:2;padding:20px 22px;width:100%;background:linear-gradient(0deg,rgba(42,42,40,.72),transparent)}
+.banner h3{font-family:var(--serif);font-size:24px;color:#fff}
+.banner small{color:var(--tan-light);letter-spacing:.1em;text-transform:uppercase;font-size:11.5px}
+
+.section{max-width:1240px;margin:0 auto;padding:64px 24px}
+.shead{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:28px;flex-wrap:wrap}
+.shead h2{font-family:var(--serif);font-size:36px;font-weight:600;letter-spacing:.04em}
+.shead .rule{flex:1;height:1px;background:var(--line);min-width:60px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px;align-items:center}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 18px;font-size:13.5px;letter-spacing:.05em;color:var(--ink-soft);transition:.2s}
+.chip:hover{border-color:var(--tan)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.filters select{border:1px solid var(--line);border-radius:999px;padding:8px 14px;background:#fff;margin-left:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:28px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:.25s;cursor:pointer}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:var(--tan-light)}
+.card .ph{aspect-ratio:3/3.6;background:var(--tan-faint);position:relative;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.card .tag{position:absolute;top:12px;left:12px;background:var(--ink);color:var(--tan-light);font-size:11px;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;padding:5px 12px}
+.card .tag.sale{background:var(--tan-dark);color:#fff}
+.card .body{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card .cat{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--tan-deep)}
+.card h3{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.2}
+.card .price{margin-top:auto;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price .now{font-size:18px;font-weight:600}
+.price .old{font-size:14px;color:var(--ink-mute);text-decoration:line-through}
+.price .bgn{font-size:12px;color:var(--ink-mute)}
+.empty{padding:70px 20px;text-align:center;color:var(--ink-mute);border:1px dashed var(--line);border-radius:14px;grid-column:1/-1}
+
+.trust{background:var(--paper-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust .wrap{max-width:1240px;margin:0 auto;padding:38px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:26px}
+.titem{display:flex;gap:14px;align-items:flex-start}
+.titem .ic{width:44px;height:44px;border-radius:999px;background:var(--tan-light);color:var(--tan-deep);display:grid;place-items:center;flex-shrink:0}
+.titem b{display:block;font-weight:600;letter-spacing:.03em}
+.titem small{color:var(--ink-soft)}
+footer{background:var(--ink);color:#CFC9BE;margin-top:70px}
+footer .wrap{max-width:1240px;margin:0 auto;padding:56px 24px 30px;display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:34px}
+footer h4{color:#fff;font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+footer li{list-style:none;margin-bottom:8px;font-size:14.5px;font-weight:300;cursor:pointer}
+footer li:hover{color:var(--tan)}
+footer .fin{border-top:1px solid rgba(255,255,255,.12);text-align:center;padding:18px;font-size:12.5px;letter-spacing:.1em}
+.newsl{display:flex;gap:8px;margin-top:12px}
+.newsl input{flex:1;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);border-radius:999px;padding:10px 16px;color:#fff;outline:none}
+.newsl input::placeholder{color:#9c968a}
+.newsl button{border:none;background:var(--tan);color:var(--ink);border-radius:999px;padding:10px 20px;letter-spacing:.08em}
+
+.scrim{position:fixed;inset:0;background:rgba(42,42,40,.5);z-index:80;opacity:0;pointer-events:none;transition:.25s}
+.scrim.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:#fff;z-index:90;transform:translateX(102%);transition:.3s;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.drawer.show{transform:none}
+.dhead{padding:20px 24px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.dhead h3{font-family:var(--serif);font-size:24px;font-weight:600}
+.x{background:none;border:none;font-size:22px;line-height:1;padding:6px;color:var(--ink-soft)}
+.dbody{flex:1;overflow:auto;padding:20px 24px}
+.dfoot{border-top:1px solid var(--line);padding:18px 24px;background:var(--paper-warm)}
+.citem{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.citem .im{width:72px;height:88px;border-radius:10px;overflow:hidden;background:var(--tan-faint);flex-shrink:0}
+.citem .im img{width:100%;height:100%;object-fit:cover}
+.citem .inf{flex:1;min-width:0}
+.citem .inf b{font-family:var(--serif);font-size:17px;display:block}
+.citem .inf small{color:var(--ink-soft)}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;margin-top:8px}
+.qty button{background:none;border:none;width:28px;height:28px;font-size:15px;color:var(--ink-soft)}
+.qty span{min-width:26px;text-align:center;font-size:14px}
+.rowline{display:flex;justify-content:space-between;margin-bottom:8px;font-size:15px;gap:12px}
+.rowline.total{font-size:18px;font-weight:600;border-top:1px solid var(--line);padding-top:10px;margin-top:6px}
+.modal{position:fixed;inset:0;z-index:200;display:none;place-items:center;padding:20px;overflow:auto;background:rgba(42,42,40,.45)}
+.modal.show{display:grid}
+.mbox{background:#fff;border-radius:18px;width:min(960px,100%);max-height:92vh;overflow:auto;box-shadow:var(--shadow);position:relative}
+.mbox.small{width:min(480px,100%)}
+.mbox.mid{width:min(680px,100%)}
+.mclose{position:absolute;top:14px;right:14px;z-index:5;background:var(--paper-warm);border:1px solid var(--line);border-radius:999px;width:36px;height:36px;font-size:18px}
+.pdp{display:grid;grid-template-columns:1fr 1fr}
+.pdp .im{background:var(--tan-faint);min-height:420px}
+.pdp .im img{width:100%;height:100%;object-fit:cover}
+.pdp .inf{padding:38px 36px}
+.pdp .cat{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--tan-deep)}
+.pdp h2{font-family:var(--serif);font-size:34px;font-weight:600;margin:8px 0 12px}
+.pdp .desc{color:var(--ink-soft);font-weight:300;margin:14px 0 20px;white-space:pre-line}
+.sizes{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 24px}
+.sz{border:1px solid var(--line);background:#fff;border-radius:8px;min-width:44px;padding:9px 12px;font-size:14px;transition:.15s}
+.sz:hover{border-color:var(--tan)}
+.sz.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.lbl{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:8px}
+.stockline{font-size:13px;color:var(--tan-deep);margin-bottom:16px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 13px;background:#fff;outline:none;transition:.15s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--tan-dark)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.frow3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.hint{font-size:12.5px;color:var(--ink-mute);margin-top:4px}
+.radio-cards{display:grid;gap:10px}
+.rcard{border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;cursor:pointer;transition:.15s;background:#fff}
+.rcard:hover{border-color:var(--tan)}
+.rcard.on{border-color:var(--tan-dark);background:var(--tan-faint)}
+.rcard b{display:block}
+.rcard small{color:var(--ink-soft)}
+.rcard .dot{width:18px;height:18px;border-radius:999px;border:2px solid var(--line);margin-top:3px;flex-shrink:0}
+.rcard.on .dot{border-color:var(--tan-dark);background:radial-gradient(circle at center,var(--tan-dark) 45%,transparent 50%)}
+.switch{position:relative;display:inline-block;width:44px;height:24px;flex-shrink:0}
+.switch input{display:none}
+.switch i{position:absolute;inset:0;background:var(--line);border-radius:999px;transition:.2s;cursor:pointer}
+.switch i:before{content:'';position:absolute;width:18px;height:18px;border-radius:999px;background:#fff;top:3px;left:3px;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.switch input:checked+i{background:var(--tan-dark)}
+.switch input:checked+i:before{transform:translateX(20px)}
+.checkout{padding:34px 36px}
+.steps{display:flex;margin-bottom:28px;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.steps div{flex:1;text-align:center;padding:10px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);background:#fff}
+.steps div.on{background:var(--ink);color:#fff}
+.steps div.done{background:var(--tan-light);color:var(--tan-deep)}
+.co-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:30px}
+.co-sum{background:var(--paper-warm);border:1px solid var(--line);border-radius:14px;padding:20px;height:fit-content}
+.co-sum h4{font-family:var(--serif);font-size:20px;margin-bottom:12px}
+.paycard{border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:12px;background:var(--paper-warm)}
+.promo-in{display:flex;gap:8px;margin:12px 0}
+.promo-in input{flex:1;border:1px solid var(--line);border-radius:8px;padding:9px 11px;text-transform:uppercase}
+.promo-ok{color:var(--tan-deep);font-weight:500}
+#toasts{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:300;display:flex;flex-direction:column;gap:8px;align-items:center}
+.toast{background:var(--ink);color:#fff;border-left:3px solid var(--tan);border-radius:10px;padding:12px 20px;font-size:14px;box-shadow:var(--shadow);animation:tin .25s;max-width:90vw}
+@keyframes tin{from{opacity:0;transform:translateY(10px)}}
+.msgcard{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px;background:var(--paper-warm)}
+.msgcard b{display:block;font-family:var(--serif);font-size:17px}
+.msgcard small{color:var(--ink-mute)}
+.msgcard p{font-size:14px;color:var(--ink-soft);margin-top:6px;white-space:pre-line}
+
+/* ============ БЕКОФИС ============ */
+#admin{position:fixed;inset:0;background:#F2EDE4;z-index:150;display:none;overflow:auto}
+#admin.show{display:block}
+.alogin{min-height:100vh;display:grid;place-items:center;background:var(--ink);padding:20px}
+.alogin .box{background:#fff;border-radius:20px;padding:44px 40px;width:min(430px,100%);text-align:center;box-shadow:var(--shadow)}
+.alogin h2{font-family:var(--serif);font-size:28px;margin:14px 0 4px}
+.alogin p{color:var(--ink-mute);font-size:13.5px;margin-bottom:22px}
+.ashell{display:grid;grid-template-columns:236px 1fr;min-height:100vh}
+.aside{background:var(--ink);color:#B9B3A6;padding:22px 0;position:sticky;top:0;height:100vh;overflow:auto}
+.aside .ttl{font-family:var(--serif);font-size:19px;letter-spacing:.12em;color:#fff;padding:0 22px 18px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:10px}
+.aside .ttl em{font-style:normal;color:var(--tan)}
+.aside button{display:flex;align-items:center;gap:10px;width:100%;background:none;border:none;color:#B9B3A6;text-align:left;padding:10px 22px;font-size:14px;letter-spacing:.04em;transition:.15s;border-left:3px solid transparent}
+.aside button:hover{color:#fff;background:rgba(255,255,255,.04)}
+.aside button.on{color:var(--tan);border-left-color:var(--tan);background:rgba(194,162,120,.1)}
+.aside .grp{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#6f6b62;padding:14px 22px 5px}
+.aside .modebadge{margin:14px 22px 0;font-size:11px;letter-spacing:.1em;border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:5px 12px;display:inline-block;color:var(--tan-light)}
+.amain{padding:28px 30px 90px;min-width:0}
+.ahead{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.ahead h2{font-family:var(--serif);font-size:30px;font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:26px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.kpi small{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute)}
+.kpi b{display:block;font-family:var(--serif);font-size:30px;font-weight:600;margin-top:4px}
+.kpi span{font-size:12.5px;color:var(--tan-deep)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:24px}
+.panel h3{font-family:var(--serif);font-size:23px;font-weight:600;margin-bottom:16px}
+.panel h3 small{font-family:var(--sans);font-size:13px;color:var(--ink-mute);font-weight:400;letter-spacing:0}
+table.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th{text-align:left;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);font-weight:500;padding:10px 12px;border-bottom:1px solid var(--line)}
+.tbl td{padding:12px;border-bottom:1px solid var(--tan-faint);vertical-align:middle}
+.tbl tr:hover td{background:var(--paper-warm)}
+.status{display:inline-block;border-radius:999px;padding:4px 12px;font-size:12px;letter-spacing:.06em;border:1px solid transparent;white-space:nowrap}
+.st-new{background:var(--ink);color:var(--tan-light)}
+.st-wait{background:var(--tan-light);color:var(--tan-deep);border-color:var(--tan)}
+.st-conf{background:#fff;color:var(--ink);border-color:var(--ink)}
+.st-ship{background:var(--tan);color:var(--ink)}
+.st-done{background:var(--tan-deep);color:#fff}
+.st-cancel{background:#fff;color:var(--ink-mute);border-color:var(--line);text-decoration:line-through}
+.mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 12px;font-size:12.5px;transition:.15s}
+.mini:hover{border-color:var(--tan-dark);color:var(--tan-deep)}
+.mini.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.mini.dark:hover{background:var(--tan-deep);border-color:var(--tan-deep)}
+.uploader{border:2px dashed var(--tan);border-radius:14px;background:var(--tan-faint);padding:26px;text-align:center;color:var(--tan-deep);cursor:pointer;transition:.2s}
+.uploader:hover{background:var(--tan-light)}
+.uploader img{max-height:170px;margin:10px auto 0;border-radius:10px}
+.prodgrid-a{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}
+.pcard-a{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.pcard-a .ph{aspect-ratio:1/1.05;background:var(--tan-faint)}
+.pcard-a .ph img{width:100%;height:100%;object-fit:cover}
+.pcard-a .b{padding:12px 14px}
+.pcard-a b{font-family:var(--serif);font-size:16px;display:block}
+.pcard-a small{color:var(--ink-soft)}
+.pcard-a .acts{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.bars{display:flex;align-items:flex-end;gap:10px;height:150px;padding-top:10px}
+.bars .b{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px;height:100%}
+.bars .bar{width:100%;max-width:52px;background:linear-gradient(180deg,var(--tan),var(--tan-dark));border-radius:8px 8px 3px 3px;min-height:3px}
+.bars small{font-size:11px;color:var(--ink-mute)}
+.bars b{font-size:12px;font-weight:600}
+.listrow{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--tan-faint);flex-wrap:wrap}
+.listrow:last-child{border:none}
+.listrow .grow{flex:1;min-width:160px}
+.pill-in{border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:14px}
+.waybox{border:1px solid var(--tan);background:var(--tan-faint);border-radius:12px;padding:14px 16px;margin-top:12px}
+.odetail{padding:34px 36px}
+.odetail h2{font-family:var(--serif);font-size:30px}
+.swatch{display:flex;align-items:center;gap:12px}
+.swatch input[type=color]{width:52px;height:40px;border:1px solid var(--line);border-radius:10px;padding:2px;background:#fff;cursor:pointer}
+.fontprev{border:1.5px solid var(--line);border-radius:12px;padding:16px;cursor:pointer;transition:.15s}
+.fontprev.on{border-color:var(--tan-dark);background:var(--tan-faint)}
+.fontprev .fs{font-size:22px}
+.banrow{display:flex;gap:14px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px;flex-wrap:wrap}
+.banrow .bim{width:110px;height:64px;border-radius:8px;background:var(--tan-light);overflow:hidden;flex-shrink:0}
+.banrow .bim img{width:100%;height:100%;object-fit:cover}
+
+.invoice{background:#fff;max-width:820px;margin:0 auto;padding:44px 48px;border:1px solid var(--line);border-radius:6px;font-size:13.5px;color:#1c1c1a}
+.invoice .top{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--ink);padding-bottom:16px;margin-bottom:18px}
+.invoice h1{font-family:var(--serif);font-size:30px;letter-spacing:.22em;font-weight:700}
+.invoice .num{text-align:right;font-size:13px}
+.invoice .num b{font-size:16px}
+.invoice .orig{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--tan-deep)}
+.inv-parties{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:20px}
+.inv-parties .box{border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.inv-parties h5{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--tan-deep);margin-bottom:8px}
+.inv-parties p{margin:2px 0}
+table.inv{width:100%;border-collapse:collapse;margin:8px 0 14px}
+.inv th{background:var(--ink);color:#fff;font-weight:500;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:8px 10px;text-align:left}
+.inv td{border:1px solid var(--line);padding:8px 10px}
+.inv .r{text-align:right}
+.inv-tot{margin-left:auto;width:300px}
+.inv-tot .rw{display:flex;justify-content:space-between;padding:5px 2px}
+.inv-tot .rw.grand{border-top:2px solid var(--ink);font-weight:700;font-size:16px;margin-top:4px;padding-top:8px}
+.inv-meta{display:grid;grid-template-columns:1fr 1fr;gap:8px 26px;margin:16px 0;font-size:13px}
+.inv-sign{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:34px}
+.inv-sign .s{border-top:1px solid var(--ink);padding-top:6px;font-size:12px;color:var(--ink-soft)}
+.inv-note{font-size:11.5px;color:var(--ink-mute);margin-top:18px;border-top:1px solid var(--line);padding-top:10px}
+.pagebody{padding:38px 40px;max-width:760px}
+.pagebody h2{font-family:var(--serif);font-size:32px;margin-bottom:16px}
+.pagebody .txt{white-space:pre-line;color:var(--ink-soft);font-weight:300}
+
+@media print{
+  body.printing *{visibility:hidden}
+  body.printing #invprint,body.printing #invprint *{visibility:visible}
+  body.printing #invprint{position:absolute;inset:0;margin:0}
+  .invoice{border:none;padding:10mm}
+}
+@media (max-width:980px){
+  .ashell{grid-template-columns:1fr}
+  .aside{position:static;height:auto;display:flex;flex-wrap:wrap;padding:10px;gap:2px}
+  .aside .ttl{width:100%;border:none;padding:8px 12px}
+  .aside .grp,.aside .modebadge{display:none}
+  .aside button{width:auto;border-left:none;border-radius:999px;padding:8px 14px}
+  .hero .wrap{grid-template-columns:1fr;padding:56px 20px 64px}
+  .hero .hanger{display:none}
+  .pdp{grid-template-columns:1fr}
+  .co-grid{grid-template-columns:1fr}
+  footer .wrap{grid-template-columns:1fr 1fr}
+  nav.main{display:none}
+  .search input{width:90px}
+  .frow,.frow3{grid-template-columns:1fr}
+  .inv-parties{grid-template-columns:1fr}
+  .checkout,.odetail{padding:24px 18px}
+}
+</style>
+</head>
+<body>
+
+<div class="maint" id="maint" style="display:none">⚠ Магазинът е временно в режим на профилактика — поръчките са спрени.</div>
+<div class="topbar" id="topbar"></div>
+
+<header class="site">
+  <div class="hwrap">
+    <span class="logo" id="logoBox" onclick="go('all')"></span>
+    <nav class="main" id="mainnav"></nav>
+    <div class="hacts">
+      <div class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B877E" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" placeholder="Търсене…" oninput="renderCatalog()">
+      </div>
+      <button class="iconbtn" title="Профил" onclick="openAuth()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+        <span class="badge" id="msgN" style="display:none">0</span>
+      </button>
+      <button class="iconbtn" title="Кошница" onclick="openCart()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 8h12l-1.2 12a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="badge" id="cartN" style="display:none">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" id="heroEyebrow"></div>
+      <h1 id="heroTitle"></h1>
+      <p class="sub" id="heroSub"></p>
+      <div class="cta">
+        <button class="btn btn-tan" onclick="document.getElementById('catalog').scrollIntoView()">Разгледай колекцията</button>
+        <button class="btn btn-ghost" onclick="view.sale=true;go('all')">Намаления</button>
+      </div>
+    </div>
+    <div class="hanger" aria-hidden="true">
+      <svg viewBox="0 0 120 96" fill="none">
+        <path d="M60 8c-6 0-10 4-10 9h6c0-2.4 1.7-4 4-4s4 1.6 4 4c0 3-2.5 4.2-4 6-1.2 1.4-2 2.8-2 5.5" stroke="#EFE5D4" stroke-width="4" stroke-linecap="round"/>
+        <path d="M60 30 14 62c-4 3-2 9 3 9h86c5 0 7-6 3-9L60 30Z" stroke="#EFE5D4" stroke-width="4.5" stroke-linejoin="round"/>
+        <path d="M74 44c0-6-5.5-9-14-9s-14 4-14 10 5 9 14 11 14 5 14 11-5.5 10-14 10-14-3-14-9" stroke="#C2A278" stroke-width="4.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true"><span id="mq"></span></div>
+</section>
+
+<div class="banners" id="banners"></div>
+
+<section class="section" id="catalog">
+  <div class="shead"><h2 id="catTitle">Всички продукти</h2><div class="rule"></div><span id="catCount" style="color:var(--ink-mute);font-size:14px"></span></div>
+  <div class="filters" id="catFilters"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="titem"><div class="ic">✦</div><div><b>Плащане с карта</b><small>Visa, Mastercard — сигурно 3D плащане</small></div></div>
+    <div class="titem"><div class="ic">₾</div><div><b>Наложен платеж</b><small>Плати при доставка в брой или с карта</small></div></div>
+    <div class="titem"><div class="ic">➤</div><div><b>Еконт и Спиди</b><small>До офис, автомат или личен адрес</small></div></div>
+    <div class="titem"><div class="ic">↺</div><div><b>Лесно връщане</b><small>14 дни право на връщане</small></div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" id="footWrap"></div>
+  <div class="fin" id="footFin"></div>
+</footer>
+
+<div class="scrim" id="scrim" onclick="closeAll()"></div>
+<aside class="drawer" id="cartD" aria-label="Кошница">
+  <div class="dhead"><h3>Кошница</h3><button class="x" onclick="closeAll()">✕</button></div>
+  <div class="dbody" id="cartBody"></div>
+  <div class="dfoot">
+    <div class="rowline"><span>Междинна сума</span><b id="cartSub">€0.00</b></div>
+    <div class="hint" style="margin-bottom:12px" id="cartShipHint"></div>
+    <button class="btn btn-ink" style="width:100%" id="toCheckout" onclick="openCheckout()">Към поръчка</button>
+  </div>
+</aside>
+
+<div class="modal" id="pdpM"><div class="mbox"><button class="mclose" onclick="closeModal('pdpM')">✕</button><div class="pdp" id="pdpBody"></div></div></div>
+<div class="modal" id="authM"><div class="mbox small" style="padding:34px"><button class="mclose" onclick="closeModal('authM')">✕</button><div id="authBody"></div></div></div>
+<div class="modal" id="coM"><div class="mbox"><button class="mclose" onclick="closeModal('coM')">✕</button><div class="checkout" id="coBody"></div></div></div>
+<div class="modal" id="pageM"><div class="mbox mid"><button class="mclose" onclick="closeModal('pageM')">✕</button><div class="pagebody" id="pageBody"></div></div></div>
+<div class="modal" id="orderM"><div class="mbox"><button class="mclose" onclick="closeModal('orderM')">✕</button><div class="odetail" id="orderBody"></div></div></div>
+<div class="modal" id="invM"><div class="mbox" style="background:var(--paper-warm);padding:26px">
+  <button class="mclose" onclick="closeModal('invM')">✕</button>
+  <div style="display:flex;justify-content:flex-end;gap:10px;margin-bottom:14px;max-width:820px;margin-inline:auto">
+    <button class="mini dark" onclick="printInvoice()">🖨 Печат / PDF</button>
+  </div>
+  <div id="invprint"></div>
+</div></div>
+
+<div id="admin"></div>
+<div id="toasts"></div>
+
+<script>
+/* =====================================================
+   SHOPINO.BG v3 — витрина + бекофис платформа
+   Работи в 2 режима:
+   · local — само браузър (за бърз преглед на файла)
+   · api   — с Node.js бекенда (реални поръчки, Еконт)
+   Бекофис: отваря се на адрес  /#admin
+===================================================== */
+const RATE = 1.95583;
+const fmt = x => '€' + (+x).toFixed(2);
+const bgn = x => (x * RATE).toFixed(2) + ' лв.';
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const STATUSES = ['Нова','Потвърдена','На изчакване','Изпратена','Доставена','Отказана'];
+const STCLASS = {'Нова':'st-new','Потвърдена':'st-conf','На изчакване':'st-wait','Изпратена':'st-ship','Доставена':'st-done','Отказана':'st-cancel'};
+const $ = id => document.getElementById(id);
+
+/* ---------- API слой ---------- */
+let MODE='local', adminToken=null;
+async function api(path, method='GET', body=null, token=null){
+  const r = await fetch('/api'+path,{
+    method, headers:{'Content-Type':'application/json', ...(token?{'Authorization':'Bearer '+token}:{})},
+    body: body?JSON.stringify(body):undefined
+  });
+  const d = await r.json().catch(()=>({}));
+  if(!r.ok) throw new Error(d.error||'Грешка в сървъра');
+  return d;
+}
+
+/* ---------- Продуктови изображения-заместители ---------- */
+function art(i, type){
+  const inks=['#2A2A28','#C2A278','#A3854F','#EFE5D4'];
+  const bg=i%3===0?'#EFE5D4':(i%3===1?'#F7F2E9':'#E8E0D2');
+  const shapes={
+    dress:`<path d="M110 70l-18 30 18 14-8 96c28 12 68 12 96 0l-8-96 18-14-18-30h-22c-4 12-14 18-29 18s-25-6-29-18z" fill="${inks[i%2===0?0:1]}"/>`,
+    shirt:`<path d="M80 84l30-22c6 10 16 16 40 16s34-6 40-16l30 22-16 34-16-8v100H112V110l-16 8z" fill="${inks[i%2===0?1:0]}"/>`,
+    pants:`<path d="M112 66h76l10 150h-30l-18-104-18 104h-30z" fill="${inks[(i+1)%2===0?0:2]}"/>`,
+    kid:`<path d="M96 96l24-18c4 8 12 12 30 12s26-4 30-12l24 18-12 26-12-6v76H120v-76l-12 6z" fill="${inks[i%2===0?1:0]}"/><circle cx="150" cy="56" r="16" fill="${inks[2]}"/>`,
+    bag:`<rect x="92" y="110" width="116" height="96" rx="14" fill="${inks[i%2===0?0:1]}"/><path d="M118 110c0-22 12-36 32-36s32 14 32 36" stroke="${inks[2]}" stroke-width="10" fill="none"/>`,
+    shoe:`<path d="M78 176c30 0 44-34 66-34 14 0 20 14 44 20 24 5 36 10 36 24H78z" fill="${inks[i%2===0?0:1]}"/><rect x="78" y="186" width="146" height="10" rx="5" fill="${inks[2]}"/>`
+  };
+  return 'data:image/svg+xml;utf8,'+encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><rect width="300" height="300" fill="${bg}"/><circle cx="${60+(i*47)%180}" cy="${50+(i*31)%60}" r="60" fill="#C2A278" opacity=".18"/>${shapes[type]||shapes.shirt}</svg>`);
+}
+const SEED=[
+  {name:'Ленена рокля „Аура“',cat:'Жени',price:64.90,old:79.90,sizes:['XS','S','M','L'],stock:14,type:'dress',desc:'Лека ленена рокля с изчистен силует — идеална за лятото.'},
+  {name:'Сатенена блуза „Мила“',cat:'Жени',price:39.90,sizes:['S','M','L'],stock:22,type:'shirt',desc:'Мека сатенена блуза с елегантна кройка.'},
+  {name:'Панталон с висока талия',cat:'Жени',price:54.90,sizes:['S','M','L','XL'],stock:9,type:'pants',desc:'Прав панталон с висока талия и фин ръб.'},
+  {name:'Рокля „Верона“',cat:'Жени',price:74.90,sizes:['XS','S','M'],stock:6,type:'dress',desc:'Вечерна рокля с деликатна драперия.'},
+  {name:'Оксфорд риза „Борис“',cat:'Мъже',price:44.90,sizes:['M','L','XL','XXL'],stock:18,type:'shirt',desc:'Класическа оксфорд риза от памук.'},
+  {name:'Чино панталон „Марин“',cat:'Мъже',price:49.90,old:59.90,sizes:['M','L','XL'],stock:11,type:'pants',desc:'Универсален чино панталон, slim кройка.'},
+  {name:'Поло тениска „Веко“',cat:'Мъже',price:29.90,sizes:['S','M','L','XL','XXL'],stock:30,type:'shirt',desc:'Пике поло от органичен памук.'},
+  {name:'Детска блузка „Слънчо“',cat:'Деца',price:19.90,sizes:['98','110','122','134'],stock:25,type:'kid',desc:'Мека памучна блузка за игра всеки ден.'},
+  {name:'Детски комплект „Мечо“',cat:'Деца',price:34.90,old:42.90,sizes:['98','110','122'],stock:8,type:'kid',desc:'Комплект от две части — блуза и панталонки.'},
+  {name:'Кожена чанта „Тера“',cat:'Аксесоари',price:89.90,sizes:['One size'],stock:5,type:'bag',desc:'Ръчно изработена чанта от естествена кожа.'},
+  {name:'Кецове „Урбан“',cat:'Аксесоари',price:59.90,sizes:['38','39','40','41','42','43'],stock:16,type:'shoe',desc:'Изчистени кецове за всекидневието.'},
+  {name:'Колан „Класик“',cat:'Аксесоари',price:24.90,sizes:['90','100','110'],stock:20,type:'bag',desc:'Кожен колан с матирана катарама.'}
+];
+
+/* ---------- Състояние ---------- */
+let S=null, session=null, cart=[], saveTimer=null, myMessages=[];
+let view={cat:'all',size:'',sort:'new',sale:false};
+
+function defaults(){
+  return {
+    v:3,
+    products:SEED.map((p,i)=>({id:'p'+(i+1),img:art(i,p.type),created:Date.now()-i*86400000,active:true,...p})),
+    orders:[],invoices:[],users:[],subscribers:[],campaigns:[],messages:{},
+    promos:[{id:'pr1',code:'ДОБРЕДОШЛИ10',type:'percent',value:10,minOrder:30,expires:'',limit:0,used:0,active:true}],
+    banners:[
+      {id:'b1',img:'',title:'Нова колекция за жени',sub:'Разгледай',cat:'Жени',show:true},
+      {id:'b2',img:'',title:'До −30% за мъже',sub:'Намаления',cat:'Мъже',show:true},
+      {id:'b3',img:'',title:'Аксесоари за финал',sub:'Довърши визията',cat:'Аксесоари',show:true}
+    ],
+    seqOrder:1000,seqInv:1,seqProd:SEED.length+1,
+    theme:{ink:'#2A2A28',tan:'#C2A278',fontPair:'cormorant',logoMode:'svg',logoImg:'',siteName:'SHOPINO',siteTld:'.BG'},
+    seo:{title:'SHOPINO.BG — Онлайн магазин за дрехи',desc:'Онлайн магазин за дрехи и аксесоари — жени, мъже, деца. Доставка с Еконт и Спиди.',keywords:'дрехи, онлайн магазин, мода, рокли, ризи, аксесоари',og:''},
+    settings:{
+      company:'ШОПИНО БГ ЕООД',eik:'206123456',vat:'BG206123456',mol:'Иван Иванов',
+      addr:'гр. София, ул. Търговска 12',iban:'BG80BNBG96611020345678',bank:'Банка ДСК',vatReg:true,
+      contactEmail:'office@shopino.bg',contactPhone:'+359880000000',contactCity:'София, България',
+      freeShip:50,ship:{eo:2.5,ea:3.9,so:2.6,sa:4.2},lowStock:5,maintenance:false,
+      adminPass:'admin123',
+      econt:{user:'iasp-dev',pass:'1Asp-dev',demo:true,senderCity:'София',senderPost:'1000',senderStreet:'ул. Търговска 12',senderName:'ШОПИНО БГ ЕООД'},
+      speedy:{user:'',pass:'',demo:true},
+      vpos:{provider:'Borica / myPOS (демо)',demo:true}
+    },
+    cms:{
+      topbar:'Безплатна доставка над €50 • Връщане до 14 дни • Доставка с Еконт и Спиди',
+      heroEyebrow:'Нова колекция · Лято 2026',
+      heroTitle:'Стилът е *подбор*, не случайност.',
+      heroSub:'Внимателно селектирани дрехи за жени, мъже и деца. Поръчай с или без регистрация — доставяме с Еконт и Спиди до цялата страна.',
+      marquee:'SHOPINO.BG ✦ Нова колекция ✦ Безплатна доставка над €50 ✦ ',
+      footAbout:'Онлайн магазин за дрехи и аксесоари. Стил, който се закача.',
+      footFin:'© 2026 SHOPINO.BG · Всички права запазени',
+      nav:[
+        {id:'n1',label:'Жени',cat:'Жени',show:true},
+        {id:'n2',label:'Мъже',cat:'Мъже',show:true},
+        {id:'n3',label:'Деца',cat:'Деца',show:true},
+        {id:'n4',label:'Аксесоари',cat:'Аксесоари',show:true}
+      ],
+      pages:[
+        {id:'pg1',title:'Общи условия',show:true,body:'Настоящите общи условия уреждат отношенията между търговеца и клиентите на онлайн магазина.\n\n1. Поръчки се приемат 24/7 през сайта.\n2. Договорът се счита за сключен след потвърждение на поръчката.\n3. Клиентът има право на отказ в 14-дневен срок съгласно ЗЗП.'},
+        {id:'pg2',title:'Политика за поверителност',show:true,body:'Обработваме лични данни съгласно Регламент (ЕС) 2016/679 (GDPR).\n\nСъбираме само данните, необходими за изпълнение на поръчката: имена, телефон, имейл и адрес за доставка. Данните не се предоставят на трети лица, освен на куриерските фирми за целите на доставката.'},
+        {id:'pg3',title:'Доставка и връщане',show:true,body:'Доставяме с Еконт и Спиди до офис, автомат или адрес в цялата страна за 1–2 работни дни.\n\nБезплатна доставка за поръчки над €50. Връщане и замяна — до 14 дни от получаването.'},
+        {id:'pg4',title:'Контакти',show:true,body:'Имейл: office@shopino.bg\nТелефон: +359 88 000 0000\nАдрес: гр. София\n\nРаботно време: понеделник – петък, 9:00 – 18:00 ч.'}
+      ]
+    }
+  };
+}
+function merge(base,over){
+  for(const k in base){
+    if(!(k in over))over[k]=base[k];
+    else if(base[k]&&typeof base[k]==='object'&&!Array.isArray(base[k])&&over[k]&&typeof over[k]==='object')merge(base[k],over[k]);
+  }
+  return over;
+}
+
+/* ---------- Тема (цветове, шрифтове, лого) ---------- */
+function shade(hex,f){ // f>0 към бяло, f<0 към черно
+  const n=parseInt(hex.slice(1),16);
+  let r=n>>16&255,g=n>>8&255,b=n&255;
+  const t=f>0?255:0, p=Math.abs(f);
+  r=Math.round(r+(t-r)*p);g=Math.round(g+(t-g)*p);b=Math.round(b+(t-b)*p);
+  return '#'+((1<<24)+(r<<16)+(g<<8)+b).toString(16).slice(1);
+}
+const FONTS={
+  cormorant:{name:'Кормо́рант + Jost (елегантен)',serif:"'Cormorant Garamond',Georgia,serif",sans:"'Jost','Segoe UI',sans-serif"},
+  playfair:{name:'Playfair + Inter (класически)',serif:"'Playfair Display',Georgia,serif",sans:"'Inter','Segoe UI',sans-serif"},
+  lora:{name:'Lora + Montserrat (модерен)',serif:"'Lora',Georgia,serif",sans:"'Montserrat','Segoe UI',sans-serif"}
+};
+function applyTheme(){
+  const t=S.theme, r=document.documentElement.style;
+  r.setProperty('--ink',t.ink);
+  r.setProperty('--ink-soft',shade(t.ink,.22));
+  r.setProperty('--ink-mute',shade(t.ink,.48));
+  r.setProperty('--tan',t.tan);
+  r.setProperty('--tan-dark',shade(t.tan,-.18));
+  r.setProperty('--tan-deep',shade(t.tan,-.34));
+  r.setProperty('--tan-light',shade(t.tan,.72));
+  r.setProperty('--tan-faint',shade(t.tan,.88));
+  r.setProperty('--line',shade(t.tan,.76));
+  r.setProperty('--paper-warm',shade(t.tan,.94));
+  const f=FONTS[t.fontPair]||FONTS.cormorant;
+  r.setProperty('--serif',f.serif);
+  r.setProperty('--sans',f.sans);
+}
+function logoHTML(light){
+  const t=S.theme, ink=light?'#EFE5D4':t.ink, gold=t.tan;
+  const word=`<span class="word" ${light?'style="color:#fff"':''}>${esc(t.siteName)}<em>${esc(t.siteTld)}</em></span>`;
+  if(t.logoMode==='img'&&t.logoImg) return `<img class="custom" src="${t.logoImg}" alt="${esc(t.siteName)}">`+word;
+  if(t.logoMode==='text') return word;
+  return `<svg viewBox="0 0 120 96" fill="none" aria-hidden="true">
+    <path d="M60 8c-6 0-10 4-10 9h6c0-2.4 1.7-4 4-4s4 1.6 4 4c0 3-2.5 4.2-4 6-1.2 1.4-2 2.8-2 5.5" stroke="${ink}" stroke-width="5" stroke-linecap="round"/>
+    <path d="M60 30 14 62c-4 3-2 9 3 9h86c5 0 7-6 3-9L60 30Z" stroke="${ink}" stroke-width="6" stroke-linejoin="round" fill="none"/>
+    <path d="M74 44c0-6-5.5-9-14-9s-14 4-14 10 5 9 14 11 14 5 14 11-5.5 10-14 10-14-3-14-9" stroke="${gold}" stroke-width="6" stroke-linecap="round" fill="none"/></svg>`+word;
+}
+
+/* ---------- Зареждане / запазване ---------- */
+const HAS_WS=typeof window.storage!=='undefined'&&window.storage&&typeof window.storage.get==='function';
+async function loadState(){
+  // 1) опит за бекенд
+  try{
+    const pub=await api('/public');
+    MODE='api';
+    S=merge(defaults(),pub);
+    S.products.forEach((p,i)=>{if(!p.img)p.img=art(i,p.type||'shirt')});
+    return;
+  }catch(e){/* няма бекенд — локален режим */}
+  try{
+    if(HAS_WS){const r=await window.storage.get('shopino-state');if(r&&r.value){S=merge(defaults(),JSON.parse(r.value));return}}
+    else{const v=localStorage.getItem('shopino-state');if(v){S=merge(defaults(),JSON.parse(v));return}}
+  }catch(e){}
+  S=defaults();save();
+}
+function save(){
+  clearTimeout(saveTimer);
+  saveTimer=setTimeout(async()=>{
+    try{
+      if(MODE==='api'){
+        if(adminToken) await api('/admin/data','PUT',{
+          products:S.products,promos:S.promos,cms:S.cms,theme:S.theme,seo:S.seo,
+          banners:S.banners,settings:S.settings,seqProd:S.seqProd,seqInv:S.seqInv
+        },adminToken);
+      }
+      else if(HAS_WS) await window.storage.set('shopino-state',JSON.stringify(S));
+      else localStorage.setItem('shopino-state',JSON.stringify(S));
+    }catch(e){console.warn('Запазване:',e.message)}
+  },350);
+}
+function toast(msg){
+  const t=document.createElement('div');t.className='toast';t.textContent=msg;
+  $('toasts').appendChild(t);setTimeout(()=>t.remove(),3400);
+}
+function openModal(id){$(id).classList.add('show')}
+function closeModal(id){$(id).classList.remove('show')}
+function closeAll(){$('scrim').classList.remove('show');$('cartD').classList.remove('show')}
+function prod(pid){return S.products.find(p=>p.id===pid)}
+
+/* ---------- Рендер на витрината от CMS ---------- */
+function renderCMS(){
+  applyTheme();
+  const c=S.cms,st=S.settings;
+  document.title=S.seo.title;
+  $('maint').style.display=st.maintenance?'block':'none';
+  $('topbar').textContent=c.topbar;
+  $('logoBox').innerHTML=logoHTML(false);
+  $('heroEyebrow').textContent=c.heroEyebrow;
+  $('heroTitle').innerHTML=esc(c.heroTitle).replace(/\*(.+?)\*/g,'<span>$1</span>').replace(/\n/g,'<br>');
+  $('heroSub').textContent=c.heroSub;
+  $('mq').textContent=Array(6).fill(c.marquee).join('');
+  $('mainnav').innerHTML=`<button data-cat="all" class="${view.cat==='all'?'on':''}" onclick="go('all')">Начало</button>`+
+    c.nav.filter(n=>n.show).map(n=>`<button data-cat="${esc(n.cat)}" class="${view.cat===n.cat?'on':''}" onclick="go('${esc(n.cat)}')">${esc(n.label)}</button>`).join('');
+  $('banners').innerHTML=S.banners.filter(b=>b.show).map(b=>`
+    <div class="banner" onclick="go('${esc(b.cat)}')">
+      ${b.img?`<img src="${b.img}" alt="">`:''}
+      <div class="ov"><small>${esc(b.sub)}</small><h3>${esc(b.title)}</h3></div>
+    </div>`).join('');
+  $('footWrap').innerHTML=`
+    <div>
+      <span class="logo" style="margin-bottom:14px">${logoHTML(true)}</span>
+      <p style="font-weight:300;font-size:14.5px;max-width:34ch;margin-top:12px">${esc(c.footAbout)}</p>
+      <div class="newsl"><input id="nlEmail" placeholder="Имейл за новини и промоции"><button onclick="subscribe()">Абонирай ме</button></div>
+    </div>
+    <div><h4>Магазин</h4><ul>${c.nav.filter(n=>n.show).map(n=>`<li onclick="go('${esc(n.cat)}')">${esc(n.label)}</li>`).join('')}</ul></div>
+    <div><h4>Информация</h4><ul>${c.pages.filter(p=>p.show).map(p=>`<li onclick="openPage('${p.id}')">${esc(p.title)}</li>`).join('')}</ul></div>
+    <div><h4>Контакт</h4><ul><li>${esc(st.contactEmail)}</li><li>${esc(st.contactPhone)}</li><li>${esc(st.contactCity)}</li></ul></div>`;
+  $('footFin').textContent=c.footFin;
+}
+function openPage(id){
+  const p=S.cms.pages.find(p=>p.id===id);if(!p)return;
+  $('pageBody').innerHTML=`<h2>${esc(p.title)}</h2><div class="txt">${esc(p.body)}</div>`;
+  openModal('pageM');
+}
+async function subscribe(){
+  const email=$('nlEmail').value.trim();
+  if(!/.+@.+\..+/.test(email)){toast('Въведи валиден имейл.');return}
+  try{
+    if(MODE==='api') await api('/newsletter','POST',{email});
+    else{if(!S.subscribers.find(s=>s.email===email))S.subscribers.push({email,date:new Date().toLocaleDateString('bg-BG')});save()}
+    $('nlEmail').value='';toast('Абонира се успешно ✓');
+  }catch(e){toast(e.message)}
+}
+
+/* ---------- Каталог ---------- */
+function go(cat){
+  view.cat=cat;renderCMS();
+  $('catTitle').textContent=cat==='all'?'Всички продукти':(S.cms.nav.find(n=>n.cat===cat)?.label||cat);
+  $('catalog').scrollIntoView({behavior:'smooth'});
+  renderCatalog();
+}
+function renderFilters(){
+  const sizes=[...new Set(S.products.flatMap(p=>p.sizes))];
+  $('catFilters').innerHTML=`
+    <button class="chip ${view.sale?'on':''}" onclick="view.sale=!view.sale;renderCatalog()">% Намаление</button>
+    <select onchange="view.size=this.value;renderCatalog()" aria-label="Размер">
+      <option value="">Всички размери</option>
+      ${sizes.map(s=>`<option ${view.size===s?'selected':''}>${esc(s)}</option>`).join('')}
+    </select>
+    <select onchange="view.sort=this.value;renderCatalog()" aria-label="Подреждане">
+      <option value="new" ${view.sort==='new'?'selected':''}>Най-нови</option>
+      <option value="asc" ${view.sort==='asc'?'selected':''}>Цена ↑</option>
+      <option value="desc" ${view.sort==='desc'?'selected':''}>Цена ↓</option>
+    </select>`;
+}
+function renderCatalog(){
+  renderFilters();
+  const q=($('q').value||'').toLowerCase();
+  let list=S.products.filter(p=>p.active!==false);
+  if(view.cat!=='all')list=list.filter(p=>p.cat===view.cat);
+  if(view.sale)list=list.filter(p=>p.old);
+  if(view.size)list=list.filter(p=>p.sizes.includes(view.size));
+  if(q)list=list.filter(p=>(p.name+' '+p.cat+' '+(p.desc||'')).toLowerCase().includes(q));
+  list.sort((a,b)=>view.sort==='asc'?a.price-b.price:view.sort==='desc'?b.price-a.price:b.created-a.created);
+  $('catCount').textContent=list.length+' артикула';
+  $('grid').innerHTML=list.length?list.map(p=>`
+    <article class="card" onclick="openPDP('${p.id}')">
+      <div class="ph">
+        ${p.old?'<span class="tag sale">-'+Math.round((1-p.price/p.old)*100)+'%</span>':(Date.now()-p.created<6*86400000?'<span class="tag">Ново</span>':'')}
+        <img src="${p.img}" alt="${esc(p.name)}" loading="lazy">
+      </div>
+      <div class="body">
+        <span class="cat">${esc(p.cat)}</span>
+        <h3>${esc(p.name)}</h3>
+        <div class="price"><span class="now">${fmt(p.price)}</span>${p.old?`<span class="old">${fmt(p.old)}</span>`:''}<span class="bgn">${bgn(p.price)}</span></div>
+      </div>
+    </article>`).join(''):'<div class="empty">Няма продукти по тези критерии.</div>';
+}
+
+/* ---------- Продуктова страница ---------- */
+let pdpSel={pid:null,size:null,qty:1};
+function openPDP(pid){
+  const p=prod(pid);pdpSel={pid,size:null,qty:1};
+  $('pdpBody').innerHTML=`
+    <div class="im"><img src="${p.img}" alt="${esc(p.name)}"></div>
+    <div class="inf">
+      <span class="cat">${esc(p.cat)}</span>
+      <h2>${esc(p.name)}</h2>
+      <div class="price"><span class="now" style="font-size:24px">${fmt(p.price)}</span>${p.old?`<span class="old">${fmt(p.old)}</span>`:''}<span class="bgn">${bgn(p.price)}</span></div>
+      <p class="desc">${esc(p.desc||'')}</p>
+      <span class="lbl">Размер</span>
+      <div class="sizes">${p.sizes.map(s=>`<button class="sz" onclick="selSize(this,'${esc(s)}')">${esc(s)}</button>`).join('')}</div>
+      <span class="lbl">Количество</span>
+      <div class="qty" style="margin:0 0 18px"><button onclick="pdpQty(-1)">−</button><span id="pdpQ">1</span><button onclick="pdpQty(1)">+</button></div>
+      <div class="stockline">${p.stock>0?'✓ В наличност: '+p.stock+' бр.':'Изчерпан'}</div>
+      <button class="btn btn-ink" style="width:100%" ${p.stock<1||S.settings.maintenance?'disabled':''} onclick="addToCart()">Добави в кошницата</button>
+      <p class="hint" style="margin-top:12px">Безплатна доставка над ${fmt(S.settings.freeShip)} · Връщане до 14 дни</p>
+    </div>`;
+  openModal('pdpM');
+}
+function selSize(btn,s){pdpSel.size=s;btn.parentNode.querySelectorAll('.sz').forEach(b=>b.classList.toggle('on',b===btn))}
+function pdpQty(d){pdpSel.qty=Math.max(1,pdpSel.qty+d);$('pdpQ').textContent=pdpSel.qty}
+function addToCart(){
+  if(!pdpSel.size){toast('Моля, избери размер.');return}
+  const ex=cart.find(c=>c.pid===pdpSel.pid&&c.size===pdpSel.size);
+  ex?ex.qty+=pdpSel.qty:cart.push({...pdpSel});
+  closeModal('pdpM');toast('Добавено в кошницата ✓');renderCartBadge();openCart();
+}
+
+/* ---------- Кошница ---------- */
+const cartSubtotal=()=>cart.reduce((s,c)=>s+prod(c.pid).price*c.qty,0);
+function renderCartBadge(){
+  const n=cart.reduce((s,c)=>s+c.qty,0);
+  $('cartN').style.display=n?'grid':'none';$('cartN').textContent=n;
+}
+function openCart(){renderCart();$('scrim').classList.add('show');$('cartD').classList.add('show')}
+function renderCart(){
+  $('cartBody').innerHTML=cart.length?cart.map((c,i)=>{const p=prod(c.pid);return `
+    <div class="citem">
+      <div class="im"><img src="${p.img}" alt=""></div>
+      <div class="inf">
+        <b>${esc(p.name)}</b>
+        <small>Размер: ${esc(c.size)} · ${fmt(p.price)}</small><br>
+        <span class="qty"><button onclick="cQty(${i},-1)">−</button><span>${c.qty}</span><button onclick="cQty(${i},1)">+</button></span>
+      </div>
+      <div style="text-align:right"><b>${fmt(p.price*c.qty)}</b><br><button class="mini" style="margin-top:8px" onclick="cDel(${i})">Премахни</button></div>
+    </div>`}).join(''):'<p style="text-align:center;color:var(--ink-mute);padding:50px 0">Кошницата е празна.<br>Разгледай колекцията и се влюби. ✦</p>';
+  const sub=cartSubtotal();
+  $('cartSub').textContent=fmt(sub);
+  $('cartShipHint').textContent=sub>=S.settings.freeShip?'✓ Безплатна доставка':(sub>0?'Още '+fmt(S.settings.freeShip-sub)+' до безплатна доставка':'');
+  $('toCheckout').disabled=!cart.length||S.settings.maintenance;
+}
+function cQty(i,d){cart[i].qty+=d;if(cart[i].qty<1)cart.splice(i,1);renderCart();renderCartBadge()}
+function cDel(i){cart.splice(i,1);renderCart();renderCartBadge()}
+
+/* ---------- Профил, съобщения ---------- */
+async function refreshMessages(){
+  if(!session)return;
+  try{
+    if(MODE==='api')myMessages=(await api('/my/messages','GET',null,session.token)).messages||[];
+    else myMessages=S.messages[session.email]||[];
+  }catch(e){myMessages=[]}
+  const n=myMessages.length;
+  $('msgN').style.display=n?'grid':'none';$('msgN').textContent=n;
+}
+async function openAuth(){
+  if(session)await refreshMessages();
+  let myOrders=[];
+  if(session){
+    try{ myOrders = MODE==='api' ? (await api('/my/orders','GET',null,session.token)).orders||[] : S.orders.filter(o=>o.customer.email===session.email); }catch(e){}
+  }
+  $('authBody').innerHTML=session?`
+    <h2 style="font-family:var(--serif);font-size:28px;margin-bottom:6px">Здравей, ${esc(session.name)}!</h2>
+    <p class="hint" style="margin-bottom:18px">${esc(session.email)}</p>
+    ${myMessages.length?`<h4 style="margin-bottom:10px">Съобщения от магазина</h4>
+      ${myMessages.map(m=>`<div class="msgcard"><b>${esc(m.subject)}</b><small>${esc(m.date)}</small><p>${esc(m.body)}</p></div>`).join('')}`:''}
+    <h4 style="margin:14px 0 10px">Моите поръчки</h4>
+    ${myOrders.map(o=>`
+      <div class="rcard" style="margin-bottom:8px;cursor:default"><div style="flex:1"><b>№ ${o.num} · ${fmt(o.total)}</b><small>${o.date}${o.waybill?' · Товарителница '+o.waybill.num:''}</small></div><span class="status ${STCLASS[o.status]}">${o.status}</span></div>
+    `).join('')||'<p class="hint">Все още нямаш поръчки.</p>'}
+    <button class="btn btn-line" style="width:100%;margin-top:18px" onclick="session=null;myMessages=[];$('msgN').style.display='none';closeModal('authM');toast('Излезе от профила.')">Изход</button>`
+  :`
+    <h2 style="font-family:var(--serif);font-size:28px;margin-bottom:4px">Профил</h2>
+    <p class="hint" style="margin-bottom:20px">Регистрацията е по желание — можеш да поръчваш и като гост.</p>
+    <div class="field"><label>Име и фамилия</label><input id="auName" placeholder="Само при регистрация"></div>
+    <div class="field"><label>Имейл</label><input id="auEmail" type="email"></div>
+    <div class="field"><label>Парола</label><input id="auPass" type="password"></div>
+    <div style="display:grid;gap:10px;margin-top:18px">
+      <button class="btn btn-ink" onclick="doLogin()">Вход</button>
+      <button class="btn btn-line" onclick="doRegister()">Регистрация</button>
+    </div>`;
+  openModal('authM');
+}
+async function doRegister(){
+  const name=$('auName').value.trim(),email=$('auEmail').value.trim(),pass=$('auPass').value;
+  if(!name||!email||!pass){toast('Попълни име, имейл и парола.');return}
+  try{
+    if(MODE==='api'){const r=await api('/auth/register','POST',{name,email,pass});session={name,email,token:r.token}}
+    else{
+      if(S.users.find(u=>u.email===email)){toast('Вече има профил с този имейл.');return}
+      S.users.push({name,email,pass,phone:'',created:Date.now()});save();session={name,email};
+    }
+    closeModal('authM');toast('Профилът е създаден ✓');refreshMessages();
+  }catch(e){toast(e.message)}
+}
+async function doLogin(){
+  const email=$('auEmail').value.trim(),pass=$('auPass').value;
+  try{
+    if(MODE==='api'){const r=await api('/auth/login','POST',{email,pass});session={name:r.name,email,token:r.token}}
+    else{
+      const u=S.users.find(u=>u.email===email&&u.pass===pass);
+      if(!u){toast('Грешен имейл или парола.');return}
+      session={name:u.name,email:u.email};
+    }
+    closeModal('authM');toast('Здравей отново, '+session.name+'!');refreshMessages();
+  }catch(e){toast(e.message)}
+}
+
+/* ---------- Промо кодове (локална проверка) ---------- */
+function findPromoLocal(code){
+  code=(code||'').trim().toUpperCase();
+  const p=S.promos.find(p=>p.code.toUpperCase()===code);
+  if(!p)return{err:'Невалиден код.'};
+  if(!p.active)return{err:'Кодът е деактивиран.'};
+  if(p.expires&&new Date(p.expires+'T23:59:59')<new Date())return{err:'Кодът е изтекъл.'};
+  if(p.limit>0&&p.used>=p.limit)return{err:'Кодът е изчерпан.'};
+  if(cartSubtotal()<p.minOrder)return{err:'Кодът важи за поръчки над '+fmt(p.minOrder)+'.'};
+  return{promo:p};
+}
+function promoDiscount(p,sub){
+  if(!p)return 0;
+  return Math.min(sub,p.type==='percent'?sub*p.value/100:p.value);
+}
+
+/* ---------- Checkout ---------- */
+let co=null;
+function shipPrice(){
+  const sub=cartSubtotal()-promoDiscount(co.promo,cartSubtotal());
+  if(sub>=S.settings.freeShip)return 0;
+  const sh=S.settings.ship;
+  return co.delivery==='econt-office'?sh.eo:co.delivery==='speedy-office'?sh.so:co.delivery==='econt-addr'?sh.ea:sh.sa;
+}
+function openCheckout(){
+  closeAll();
+  co={step:1,delivery:'econt-office',payment:'cod',promo:null,promoCode:'',
+      name:session?.name||'',email:session?.email||'',phone:'',city:'',office:'',addr:'',note:'',makeAcc:false,pass:''};
+  renderCO();openModal('coM');
+}
+async function applyPromo(){
+  const code=$('promoIn').value;
+  try{
+    if(MODE==='api'){
+      const r=await api('/promo/check','POST',{code,subtotal:cartSubtotal()});
+      co.promo=r.promo;co.promoCode=r.promo.code;
+    }else{
+      const r=findPromoLocal(code);
+      if(r.err){toast(r.err);return}
+      co.promo=r.promo;co.promoCode=r.promo.code;
+    }
+    toast('Кодът е приложен ✓');renderCO();
+  }catch(e){toast(e.message)}
+}
+function coSum(){
+  const sub=cartSubtotal(),disc=promoDiscount(co.promo,sub),ship=shipPrice();
+  return `<div class="co-sum"><h4>Твоята поръчка</h4>
+    ${cart.map(c=>{const p=prod(c.pid);return `<div class="rowline"><span>${esc(p.name)} · ${esc(c.size)} × ${c.qty}</span><span>${fmt(p.price*c.qty)}</span></div>`}).join('')}
+    ${co.promo
+      ?`<div class="rowline promo-ok"><span>Отстъпка (${esc(co.promo.code)})</span><span>−${fmt(disc)} <button class="mini" onclick="co.promo=null;renderCO()">✕</button></span></div>`
+      :`<div class="promo-in"><input id="promoIn" placeholder="Промо код" value="${esc(co.promoCode)}"><button class="mini dark" onclick="applyPromo()">Приложи</button></div>`}
+    <div class="rowline"><span>Доставка</span><span>${ship?fmt(ship):'Безплатна'}</span></div>
+    <div class="rowline total"><span>Общо</span><span>${fmt(sub-disc+ship)}</span></div>
+    <div class="hint" style="text-align:right">${bgn(sub-disc+ship)}</div></div>`;
+}
+function renderCO(){
+  const stepNames=['Данни','Доставка','Плащане'];
+  let inner='';
+  if(co.step===1){
+    inner=`
+    ${session?`<p class="hint" style="margin-bottom:14px">Поръчваш като <b>${esc(session.name)}</b> — данните са попълнени.</p>`:`<p class="hint" style="margin-bottom:14px">Поръчваш като гост — без регистрация. Ако желаеш, създай профил накрая с едно кликване.</p>`}
+    <div class="frow">
+      <div class="field"><label>Име и фамилия *</label><input id="cName" value="${esc(co.name)}"></div>
+      <div class="field"><label>Телефон *</label><input id="cPhone" value="${esc(co.phone)}" placeholder="+359 ..."></div>
+    </div>
+    <div class="field"><label>Имейл *</label><input id="cEmail" type="email" value="${esc(co.email)}"></div>
+    ${!session?`<label class="rcard ${co.makeAcc?'on':''}" style="margin-top:6px" onclick="grab(1);co.makeAcc=!co.makeAcc;renderCO()"><span class="dot"></span><span><b>Създай ми профил с тези данни</b><small>За да следиш поръчките си (по желание)</small></span></label>
+    ${co.makeAcc?'<div class="field" style="margin-top:10px"><label>Парола за профила</label><input id="cPass" type="password" value="'+esc(co.pass)+'"></div>':''}`:''}
+    <div style="margin-top:20px;display:flex;justify-content:flex-end"><button class="btn btn-ink" onclick="coNext(1)">Към доставка →</button></div>`;
+  }
+  if(co.step===2){
+    const sh=S.settings.ship;
+    const opts=[
+      ['econt-office','Еконт — до офис',fmt(sh.eo)],
+      ['econt-addr','Еконт — до адрес',fmt(sh.ea)],
+      ['speedy-office','Спиди — до офис / автомат',fmt(sh.so)],
+      ['speedy-addr','Спиди — до адрес',fmt(sh.sa)]
+    ];
+    const office=co.delivery.endsWith('office');
+    inner=`
+    <span class="lbl">Куриер и начин на доставка</span>
+    <div class="radio-cards">${opts.map(o=>`
+      <label class="rcard ${co.delivery===o[0]?'on':''}" onclick="grab(2);co.delivery='${o[0]}';renderCO()"><span class="dot"></span><span><b>${o[1]}</b><small>${cartSubtotal()>=S.settings.freeShip?'Безплатна':o[2]} · 1–2 работни дни</small></span></label>`).join('')}
+    </div>
+    <div class="frow" style="margin-top:16px">
+      <div class="field"><label>Град *</label><input id="cCity" value="${esc(co.city)}"></div>
+      <div class="field"><label>${office?'Офис / автомат *':'Адрес (ул., №, ет.) *'}</label><input id="cOffice" value="${esc(office?co.office:co.addr)}" placeholder="${office?'напр. Еконт — офис Младост 1':'напр. ул. Иглика 5, ет. 2'}"></div>
+    </div>
+    <div class="field"><label>Бележка към поръчката</label><textarea id="cNote" rows="2">${esc(co.note)}</textarea></div>
+    <div style="margin-top:18px;display:flex;justify-content:space-between"><button class="btn btn-line" onclick="co.step=1;renderCO()">← Назад</button><button class="btn btn-ink" onclick="coNext(2)">Към плащане →</button></div>`;
+  }
+  if(co.step===3){
+    inner=`
+    <span class="lbl">Начин на плащане</span>
+    <div class="radio-cards">
+      <label class="rcard ${co.payment==='cod'?'on':''}" onclick="co.payment='cod';renderCO()"><span class="dot"></span><span><b>Наложен платеж</b><small>Плащаш при получаване — в брой или с карта на куриера</small></span></label>
+      <label class="rcard ${co.payment==='card'?'on':''}" onclick="co.payment='card';renderCO()"><span class="dot"></span><span><b>Карта онлайн</b><small>Visa / Mastercard · сигурно 3-D Secure плащане</small></span></label>
+    </div>
+    ${co.payment==='card'?`
+    <div class="paycard">
+      <div class="field"><label>Номер на карта</label><input placeholder="•••• •••• •••• ••••" inputmode="numeric" maxlength="19"></div>
+      <div class="frow">
+        <div class="field"><label>Валидна до</label><input placeholder="ММ/ГГ" maxlength="5"></div>
+        <div class="field"><label>CVC</label><input placeholder="•••" maxlength="4"></div>
+      </div>
+      <p class="hint">Демо режим — данните не се изпращат никъде. Реалното плащане минава през виртуалния POS на банката (Borica / myPOS / Stripe).</p>
+    </div>`:''}
+    <div style="margin-top:20px;display:flex;justify-content:space-between">
+      <button class="btn btn-line" onclick="co.step=2;renderCO()">← Назад</button>
+      <button class="btn btn-tan" id="placeBtn" onclick="placeOrder()">Завърши поръчката ✓</button>
+    </div>`;
+  }
+  $('coBody').innerHTML=`
+    <h2 style="font-family:var(--serif);font-size:32px;margin-bottom:18px">Завършване на поръчка</h2>
+    <div class="steps">${stepNames.map((s,i)=>`<div class="${co.step===i+1?'on':co.step>i+1?'done':''}">${i+1}. ${s}</div>`).join('')}</div>
+    <div class="co-grid"><div>${inner}</div>${coSum()}</div>`;
+}
+function grab(step){
+  if(step===1){co.name=$('cName')?.value??co.name;co.phone=$('cPhone')?.value??co.phone;co.email=$('cEmail')?.value??co.email;co.pass=$('cPass')?.value??co.pass}
+  if(step===2){co.city=$('cCity')?.value??co.city;const v=$('cOffice')?.value??'';co.delivery.endsWith('office')?co.office=v:co.addr=v;co.note=$('cNote')?.value??co.note}
+}
+function coNext(step){
+  grab(step);
+  if(step===1){
+    if(!co.name.trim()||!co.phone.trim()||!co.email.trim()){toast('Попълни име, телефон и имейл.');return}
+    if(co.makeAcc&&!co.pass){toast('Въведи парола за новия профил.');return}
+    co.step=2;
+  }else if(step===2){
+    if(!co.city.trim()||!(co.delivery.endsWith('office')?co.office:co.addr).trim()){toast('Попълни град и офис/адрес.');return}
+    co.step=3;
+  }
+  renderCO();
+}
+function orderSuccess(num,email,carrier,method){
+  $('coBody').innerHTML=`
+    <div style="text-align:center;padding:44px 10px">
+      <div style="width:74px;height:74px;border-radius:999px;background:var(--tan-light);color:var(--tan-deep);display:grid;place-items:center;font-size:32px;margin:0 auto 18px">✓</div>
+      <h2 style="font-family:var(--serif);font-size:34px">Благодарим ти!</h2>
+      <p style="color:var(--ink-soft);margin:10px 0 4px">Поръчка <b>№ ${num}</b> е приета успешно.</p>
+      <p class="hint">Ще получиш потвърждение на ${esc(email)}. Доставка: ${carrier}, ${method.toLowerCase()}.</p>
+      <button class="btn btn-ink" style="margin-top:24px" onclick="closeModal('coM')">Продължи с пазаруването</button>
+    </div>`;
+  toast('Поръчката е приета ✓');
+}
+async function placeOrder(){
+  const carrier=co.delivery.startsWith('econt')?'Еконт':'Спиди';
+  const method=co.delivery.endsWith('office')?'До офис':'До адрес';
+  if(MODE==='api'){
+    $('placeBtn').disabled=true;
+    try{
+      const r=await api('/orders','POST',{
+        customer:{name:co.name,phone:co.phone,email:co.email},
+        delivery:{carrier,method,place:co.city+', '+(co.delivery.endsWith('office')?co.office:co.addr),note:co.note,kind:co.delivery},
+        payment:co.payment,promoCode:co.promo?co.promo.code:null,
+        items:cart.map(c=>({pid:c.pid,size:c.size,qty:c.qty})),
+        makeAcc:co.makeAcc,pass:co.pass
+      });
+      cart=[];renderCartBadge();
+      try{const pub=await api('/public');S=merge(defaults(),pub);S.products.forEach((p,i)=>{if(!p.img)p.img=art(i,p.type||'shirt')});renderCatalog()}catch(e){}
+      if(r.token)session={name:co.name,email:co.email,token:r.token};
+      orderSuccess(r.num,co.email,carrier,method);
+    }catch(e){toast(e.message);$('placeBtn').disabled=false}
+    return;
+  }
+  // локален режим
+  const sub=cartSubtotal(),disc=promoDiscount(co.promo,sub),ship=shipPrice();
+  const num='SHP-'+(++S.seqOrder);
+  const order={
+    id:'o'+Date.now(),num,date:new Date().toLocaleString('bg-BG',{dateStyle:'short',timeStyle:'short'}),ts:Date.now(),
+    customer:{name:co.name,phone:co.phone,email:co.email},
+    delivery:{carrier,method,place:co.city+', '+(co.delivery.endsWith('office')?co.office:co.addr),price:ship,note:co.note},
+    payment:co.payment==='card'?'Карта онлайн':'Наложен платеж',
+    items:cart.map(c=>{const p=prod(c.pid);return{pid:c.pid,name:p.name,size:c.size,qty:c.qty,price:p.price}}),
+    sub,discount:disc,promo:co.promo?co.promo.code:null,total:sub-disc+ship,
+    status:'Нова',invoiceId:null,waybill:null
+  };
+  cart.forEach(c=>{const p=prod(c.pid);p.stock=Math.max(0,p.stock-c.qty)});
+  if(co.promo){const pr=S.promos.find(p=>p.id===co.promo.id);if(pr)pr.used++}
+  if(co.makeAcc&&!S.users.find(u=>u.email===co.email)){
+    S.users.push({name:co.name,email:co.email,pass:co.pass,phone:co.phone,created:Date.now()});session={name:co.name,email:co.email};
+  }
+  S.orders.unshift(order);save();
+  cart=[];renderCartBadge();renderCatalog();
+  orderSuccess(num,co.email,carrier,method);
+}
+
+/* =====================================================
+   БЕКОФИС — отделна платформа на адрес /#admin
+===================================================== */
+let A={in:false,tab:'dash',ofilter:'Всички',osearch:'',editPid:null,imgData:null,psearch:'',banImg:null,logoImg:null};
+function openAdmin(){
+  $('admin').classList.add('show');
+  document.body.style.overflow='hidden';
+  A.in?renderShell():renderLogin();
+}
+function closeAdmin(){
+  $('admin').classList.remove('show');
+  document.body.style.overflow='';
+  if(location.hash==='#admin')history.replaceState(null,'',location.pathname);
+  renderCMS();renderCatalog();
+}
+function renderLogin(){
+  $('admin').innerHTML=`
+  <div class="alogin"><div class="box">
+    <svg viewBox="0 0 120 96" fill="none" style="height:52px;margin:0 auto"><path d="M60 30 14 62c-4 3-2 9 3 9h86c5 0 7-6 3-9L60 30Z" stroke="#2A2A28" stroke-width="6" stroke-linejoin="round"/><path d="M74 44c0-6-5.5-9-14-9s-14 4-14 10 5 9 14 11 14 5 14 11-5.5 10-14 10-14-3-14-9" stroke="#C2A278" stroke-width="6" stroke-linecap="round"/></svg>
+    <h2>Бекофис</h2>
+    <p>Платформа за управление на магазина. Отваря се само на адрес <b>/#admin</b> — клиентите не я виждат.</p>
+    <div class="field" style="text-align:left"><label>Парола</label><input id="aPass" type="password" onkeydown="if(event.key==='Enter')adminLogin()"></div>
+    <button class="btn btn-ink" style="width:100%" onclick="adminLogin()">Вход в бекофиса</button>
+    <p class="hint" style="margin-top:14px">Начална парола: <b>admin123</b> (смени я от Настройки → Сигурност)</p>
+    <button class="mini" style="margin-top:16px" onclick="closeAdmin()">← Обратно към магазина</button>
+  </div></div>`;
+  setTimeout(()=>$('aPass')&&$('aPass').focus(),50);
+}
+async function adminLogin(){
+  const pass=$('aPass').value;
+  try{
+    if(MODE==='api'){
+      const r=await api('/admin/login','POST',{pass});
+      adminToken=r.token;
+      const st=await api('/admin/state','GET',null,adminToken);
+      S=merge(defaults(),st);
+      S.products.forEach((p,i)=>{if(!p.img)p.img=art(i,p.type||'shirt')});
+    }else if(pass!==S.settings.adminPass){toast('Грешна парола.');return}
+    A.in=true;renderShell();
+  }catch(e){toast(e.message)}
+}
+const ATABS=[
+  ['grp','Търговия'],
+  ['dash','◈ Табло'],['orders','▤ Поръчки'],['products','▦ Продукти'],['cats','☰ Категории'],['promos','% Отстъпки'],['customers','☺ Клиенти'],
+  ['grp','Маркетинг'],
+  ['marketing','✉ Кампании'],['banners','▧ Банери'],
+  ['grp','Дизайн и сайт'],
+  ['design','◐ Дизайн'],['cms','✎ Текстове'],['pages','§ Страници'],['seo','◎ SEO'],
+  ['grp','Документи'],
+  ['invoices','⎙ Фактури'],
+  ['grp','Система'],
+  ['settings','⚙ Настройки']
+];
+function renderShell(){
+  $('admin').innerHTML=`
+  <div class="ashell">
+    <div class="aside">
+      <div class="ttl">${esc(S.theme.siteName)}<em>${esc(S.theme.siteTld)}</em><br><small style="font-size:11px;letter-spacing:.2em;color:#8B877E">БЕКОФИС</small></div>
+      ${ATABS.map(t=>t[0]==='grp'?`<div class="grp">${t[1]}</div>`:`<button data-t="${t[0]}" class="${A.tab===t[0]?'on':''}" onclick="atab('${t[0]}')">${t[1]}</button>`).join('')}
+      <span class="modebadge">${MODE==='api'?'● Онлайн (с бекенд)':'○ Локален режим'}</span>
+      <button class="exit" style="margin-top:14px;color:#fff" onclick="closeAdmin()">← Към магазина</button>
+      <button onclick="A.in=false;adminToken=null;renderLogin()">⏻ Изход</button>
+    </div>
+    <div class="amain" id="amain"></div>
+  </div>`;
+  atab(A.tab);
+}
+function atab(t){
+  A.tab=t;
+  document.querySelectorAll('.aside button[data-t]').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  ({dash:renderDash,orders:renderOrders,products:renderProducts,cats:renderCats,promos:renderPromos,customers:renderCustomers,
+    marketing:renderMarketing,banners:renderBanners,design:renderDesign,cms:renderCmsAdmin,pages:renderPages,seo:renderSeo,
+    invoices:renderInvoices,settings:renderSettings})[t]();
+  window.scrollTo({top:0});
+}
+
+/* ---------- Табло ---------- */
+function renderDash(){
+  const today=new Date().toDateString();
+  const oToday=S.orders.filter(o=>new Date(o.ts).toDateString()===today);
+  const rev=S.orders.filter(o=>o.status!=='Отказана').reduce((s,o)=>s+o.total,0);
+  const pending=S.orders.filter(o=>['Нова','На изчакване'].includes(o.status)).length;
+  const days=[...Array(7)].map((_,i)=>{const d=new Date();d.setDate(d.getDate()-(6-i));return d});
+  const byDay=days.map(d=>({label:d.toLocaleDateString('bg-BG',{weekday:'short'}),
+    sum:S.orders.filter(o=>o.status!=='Отказана'&&new Date(o.ts).toDateString()===d.toDateString()).reduce((s,o)=>s+o.total,0)}));
+  const max=Math.max(...byDay.map(d=>d.sum),1);
+  const cnt={};
+  S.orders.filter(o=>o.status!=='Отказана').forEach(o=>o.items.forEach(i=>cnt[i.name]=(cnt[i.name]||0)+i.qty));
+  const top=Object.entries(cnt).sort((a,b)=>b[1]-a[1]).slice(0,5);
+  $('amain').innerHTML=`
+    <div class="ahead"><h2>Табло</h2><span class="hint">${new Date().toLocaleDateString('bg-BG',{dateStyle:'full'})}</span></div>
+    <div class="kpis">
+      <div class="kpi"><small>Поръчки днес</small><b>${oToday.length}</b><span>${fmt(oToday.reduce((s,o)=>s+o.total,0))} оборот</span></div>
+      <div class="kpi"><small>Общ оборот</small><b>${fmt(rev)}</b><span>${bgn(rev)}</span></div>
+      <div class="kpi"><small>Чакащи обработка</small><b>${pending}</b><span>нови + на изчакване</span></div>
+      <div class="kpi"><small>Абонати за новини</small><b>${(S.subscribers||[]).length}</b><span>от формата във фуутъра</span></div>
+    </div>
+    <div class="panel"><h3>Приходи — последни 7 дни</h3>
+      <div class="bars">${byDay.map(d=>`<div class="b"><b>${d.sum?fmt(d.sum):''}</b><div class="bar" style="height:${Math.round(d.sum/max*100)}%"></div><small>${d.label}</small></div>`).join('')}</div>
+    </div>
+    <div class="co-grid">
+      <div class="panel"><h3>Последни поръчки</h3>${ordersTable(S.orders.slice(0,5))}</div>
+      <div>
+        <div class="panel"><h3>Топ продукти</h3>${top.map(t=>`<div class="rowline"><span>${esc(t[0])}</span><b>${t[1]} бр.</b></div>`).join('')||'<p class="hint">Още няма продажби.</p>'}</div>
+        <div class="panel"><h3>Ниска наличност (&lt; ${S.settings.lowStock})</h3>
+        ${S.products.filter(p=>p.stock<S.settings.lowStock).map(p=>`<div class="rowline"><span>${esc(p.name)}</span><b style="color:var(--tan-deep)">${p.stock} бр.</b></div>`).join('')||'<p class="hint">Всичко е заредено. ✓</p>'}</div>
+      </div>
+    </div>`;
+}
+
+/* ---------- Поръчки ---------- */
+function ordersTable(list){
+  if(!list.length)return '<p class="hint">Няма поръчки в тази категория.</p>';
+  return `<div style="overflow:auto"><table class="tbl"><thead><tr>
+    <th>№</th><th>Дата</th><th>Клиент</th><th>Доставка</th><th>Плащане</th><th>Сума</th><th>Статус</th><th></th></tr></thead><tbody>
+    ${list.map(o=>`<tr>
+      <td><b>${o.num}</b>${o.waybill?'<br><small style="color:var(--tan-deep)">товар. '+o.waybill.num+'</small>':''}</td><td>${o.date}</td>
+      <td>${esc(o.customer.name)}<br><small style="color:var(--ink-mute)">${esc(o.customer.phone)}</small></td>
+      <td>${o.delivery.carrier} · ${o.delivery.method}</td>
+      <td>${o.payment}</td><td><b>${fmt(o.total)}</b>${o.discount?'<br><small style="color:var(--tan-deep)">промо −'+fmt(o.discount)+'</small>':''}</td>
+      <td><span class="status ${STCLASS[o.status]}">${o.status}</span></td>
+      <td style="white-space:nowrap"><button class="mini dark" onclick="openOrder('${o.id}')">Отвори</button></td>
+    </tr>`).join('')}
+  </tbody></table></div>`;
+}
+function renderOrders(){
+  const tabs=['Всички',...STATUSES];
+  let list=S.orders;
+  if(A.ofilter!=='Всички')list=list.filter(o=>o.status===A.ofilter);
+  if(A.osearch)list=list.filter(o=>(o.num+' '+o.customer.name+' '+o.customer.phone+' '+o.customer.email).toLowerCase().includes(A.osearch.toLowerCase()));
+  $('amain').innerHTML=`
+    <div class="ahead"><h2>Поръчки</h2><button class="mini" onclick="exportOrdersCSV()">⇩ Експорт CSV</button></div>
+    <div class="panel">
+      <div class="filters" style="margin-bottom:18px">
+        ${tabs.map(t=>{const n=t==='Всички'?S.orders.length:S.orders.filter(o=>o.status===t).length;
+          return `<button class="chip ${A.ofilter===t?'on':''}" onclick="A.ofilter='${t}';renderOrders()">${t} (${n})</button>`}).join('')}
+        <input style="margin-left:auto;border:1px solid var(--line);border-radius:999px;padding:8px 16px" placeholder="Търси № / клиент / телефон" value="${esc(A.osearch)}" oninput="A.osearch=this.value;renderOrders()">
+      </div>
+      ${ordersTable(list)}
+    </div>`;
+}
+async function setStatus(id,st){
+  const o=S.orders.find(o=>o.id===id);
+  try{
+    if(MODE==='api')await api('/admin/orders/'+id,'PATCH',{status:st},adminToken);
+    o.status=st;if(MODE==='local')save();
+    toast('Статус: '+st);openOrder(id);
+  }catch(e){toast(e.message)}
+}
+function openOrder(id){
+  const o=S.orders.find(o=>o.id===id);
+  $('orderBody').innerHTML=`
+    <h2>Поръчка ${o.num} <span class="status ${STCLASS[o.status]}" style="vertical-align:middle">${o.status}</span></h2>
+    <p class="hint" style="margin-bottom:20px">${o.date} · ${o.payment}${o.promo?' · промо код '+esc(o.promo):''}</p>
+    <div class="co-grid">
+      <div>
+        <div class="panel" style="margin-bottom:16px"><h3 style="font-size:19px">Артикули</h3>
+          ${o.items.map(i=>`<div class="rowline"><span>${esc(i.name)} (${esc(i.size)}) × ${i.qty}</span><b>${fmt(i.price*i.qty)}</b></div>`).join('')}
+          ${o.discount?`<div class="rowline promo-ok"><span>Отстъпка (${esc(o.promo)})</span><span>−${fmt(o.discount)}</span></div>`:''}
+          <div class="rowline"><span>Доставка</span><span>${o.delivery.price?fmt(o.delivery.price):'Безплатна'}</span></div>
+          <div class="rowline total"><span>Общо</span><span>${fmt(o.total)} <small style="font-weight:400;color:var(--ink-mute)">(${bgn(o.total)})</small></span></div>
+        </div>
+        <div class="panel"><h3 style="font-size:19px">Клиент и доставка</h3>
+          <div class="rowline"><span>Клиент</span><b>${esc(o.customer.name)}</b></div>
+          <div class="rowline"><span>Телефон</span><b>${esc(o.customer.phone)}</b></div>
+          <div class="rowline"><span>Имейл</span><b>${esc(o.customer.email)}</b></div>
+          <div class="rowline"><span>Доставка</span><b>${o.delivery.carrier} · ${o.delivery.method}</b></div>
+          <div class="rowline"><span>Място</span><b>${esc(o.delivery.place)}</b></div>
+          ${o.delivery.note?`<div class="rowline"><span>Бележка</span><b>${esc(o.delivery.note)}</b></div>`:''}
+        </div>
+      </div>
+      <div>
+        <div class="panel" style="margin-bottom:16px"><h3 style="font-size:19px">Статус</h3>
+          <div class="radio-cards">${STATUSES.map(s=>`<label class="rcard ${o.status===s?'on':''}" onclick="setStatus('${o.id}','${s}')"><span class="dot"></span><b>${s}</b></label>`).join('')}</div>
+        </div>
+        <div class="panel"><h3 style="font-size:19px">Товарителница</h3>
+          ${o.waybill?`
+            <div class="waybox"><b>${o.waybill.carrier} № ${o.waybill.num}</b><br><small>Създадена: ${o.waybill.date}${o.waybill.pdf?'':' · '+(o.waybill.demo?'демо':'реална')}</small><br>
+            ${o.waybill.pdf?`<a class="mini dark" style="display:inline-block;margin-top:8px" href="${o.waybill.pdf}" target="_blank">⎙ PDF етикет</a>`:''}
+            <a class="mini" style="display:inline-block;margin-top:8px" href="https://www.econt.com/services/track-shipment/${o.waybill.num}" target="_blank">Проследи</a></div>`
+          :`
+            <button class="btn btn-ink" style="width:100%;margin-bottom:8px" id="wbBtn" onclick="makeWaybill('${o.id}')">Създай товарителница (${o.delivery.carrier})</button>
+            <p class="hint">${S.settings.econt.demo?'Еконт е в ДЕМО режим — номерът се генерира локално. Пусни реалния режим от Настройки → Интеграции, след като въведеш данните си от ee.econt.com.':'Еконт е в РЕАЛЕН режим — товарителницата ще се създаде в системата на Еконт.'}</p>`}
+        </div>
+        <div class="panel"><h3 style="font-size:19px">Фактура</h3>
+          ${o.invoiceId
+            ?`<button class="btn btn-line" style="width:100%" onclick="showInvoice('${o.invoiceId}')">Преглед на фактурата</button>`
+            :`<button class="btn btn-tan" style="width:100%" onclick="closeModal('orderM');makeInvoice('${o.id}')">Издай фактура</button>`}
+        </div>
+      </div>
+    </div>`;
+  openModal('orderM');
+}
+async function makeWaybill(id){
+  const o=S.orders.find(o=>o.id===id);
+  try{
+    if(MODE==='api'){
+      $('wbBtn').disabled=true;$('wbBtn').textContent='Създаване…';
+      const r=await api('/admin/orders/'+id+'/waybill','POST',{},adminToken);
+      Object.assign(o,r.order);
+      toast('Товарителница '+o.waybill.num+' ✓'+(o.waybill.demo?' (демо)':''));
+    }else{
+      const num=(o.delivery.carrier==='Еконт'?'105':'80')+String(Math.floor(1e7+Math.random()*9e7));
+      o.waybill={carrier:o.delivery.carrier,num,demo:true,date:new Date().toLocaleString('bg-BG',{dateStyle:'short',timeStyle:'short'})};
+      if(o.status==='Нова'||o.status==='Потвърдена')o.status='Изпратена';
+      save();toast('Товарителница '+num+' ✓ (демо)');
+    }
+    openOrder(id);
+  }catch(e){toast('Еконт: '+e.message);openOrder(id)}
+}
+function exportOrdersCSV(){
+  const rows=[['Номер','Дата','Клиент','Телефон','Имейл','Куриер','Място','Плащане','Сума EUR','Отстъпка','Статус','Товарителница']];
+  S.orders.forEach(o=>rows.push([o.num,o.date,o.customer.name,o.customer.phone,o.customer.email,o.delivery.carrier+' '+o.delivery.method,o.delivery.place,o.payment,o.total.toFixed(2),(o.discount||0).toFixed(2),o.status,o.waybill?o.waybill.num:'']));
+  const csv='\ufeff'+rows.map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(';')).join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));
+  a.download='shopino-orders.csv';a.click();
+  toast('Файлът е свален ✓');
+}
+
+/* ---------- Продукти ---------- */
+function renderProducts(){
+  const e=A.editPid?prod(A.editPid):null;
+  const list=S.products.filter(p=>!A.psearch||(p.name+' '+p.cat).toLowerCase().includes(A.psearch.toLowerCase()));
+  $('amain').innerHTML=`
+    <div class="ahead"><h2>Продукти</h2></div>
+    <div class="panel">
+      <h3>${e?'Редакция: '+esc(e.name):'Качване на нов продукт'}</h3>
+      <div class="co-grid">
+        <div>
+          <div class="frow">
+            <div class="field"><label>Име на продукта *</label><input id="pName" value="${esc(e?.name||'')}"></div>
+            <div class="field"><label>Категория *</label><select id="pCat">${S.cms.nav.map(n=>`<option value="${esc(n.cat)}" ${e?.cat===n.cat?'selected':''}>${esc(n.label)}</option>`).join('')}</select></div>
+          </div>
+          <div class="frow">
+            <div class="field"><label>Цена (EUR) *</label><input id="pPrice" type="number" step="0.01" value="${e?.price||''}"></div>
+            <div class="field"><label>Стара цена — за задраскване</label><input id="pOld" type="number" step="0.01" value="${e?.old||''}" placeholder="празно = без намаление"></div>
+          </div>
+          <div class="frow">
+            <div class="field"><label>Размери (със запетая) *</label><input id="pSizes" value="${esc(e?e.sizes.join(', '):'S, M, L')}"></div>
+            <div class="field"><label>Наличност (бр.) *</label><input id="pStock" type="number" value="${e?.stock??10}"></div>
+          </div>
+          <div class="field"><label>Описание</label><textarea id="pDesc" rows="3">${esc(e?.desc||'')}</textarea></div>
+        </div>
+        <div>
+          <span class="lbl">Снимка на продукта</span>
+          <div class="uploader" onclick="$('pImg').click()">
+            <div>⇪ Качи снимка (JPG/PNG)</div>
+            <small>или ще се използва брандиран визуален заместител</small>
+            <img id="pPrev" src="${A.imgData||e?.img||''}" style="${(A.imgData||e?.img)?'':'display:none'}">
+          </div>
+          <input type="file" id="pImg" accept="image/*" style="display:none" onchange="pickImg(this,'pPrev',d=>A.imgData=d)">
+          <div style="display:flex;gap:10px;margin-top:18px">
+            <button class="btn btn-tan" style="flex:1" onclick="saveProduct()">${e?'Запази промените':'Публикувай продукта'}</button>
+            ${e?'<button class="btn btn-line" onclick="A.editPid=null;A.imgData=null;renderProducts()">Отказ</button>':''}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Каталог (${S.products.length}) <small>— „% Отстъпка“ задрасква цената директно върху продукта</small></h3>
+      <input class="pill-in" style="width:min(340px,100%);margin-bottom:16px" placeholder="Търси продукт…" value="${esc(A.psearch)}" oninput="A.psearch=this.value;renderProducts()">
+      <div class="prodgrid-a">
+        ${list.map(p=>`
+          <div class="pcard-a" style="${p.active===false?'opacity:.5':''}">
+            <div class="ph"><img src="${p.img}" alt=""></div>
+            <div class="b"><b>${esc(p.name)}</b>
+              <small>${esc(p.cat)} · ${fmt(p.price)}${p.old?' <s>'+fmt(p.old)+'</s>':''} · ${p.stock} бр.</small>
+              <div class="acts">
+                <button class="mini" onclick="A.editPid='${p.id}';A.imgData=null;renderProducts()">Редакция</button>
+                ${p.old
+                  ?`<button class="mini" onclick="clearDiscount('${p.id}')">Махни %</button>`
+                  :`<button class="mini dark" onclick="quickDiscount('${p.id}')">% Отстъпка</button>`}
+                <button class="mini" onclick="toggleProd('${p.id}')">${p.active===false?'Покажи':'Скрий'}</button>
+                <button class="mini" onclick="delProd('${p.id}')">Изтрий</button>
+              </div>
+            </div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+}
+function pickImg(inp,prevId,cb,maxMB=1.5){
+  const f=inp.files[0];if(!f)return;
+  if(f.size>maxMB*1024*1024){toast('Файлът е голям — избери до ~'+maxMB+' MB.');return}
+  const r=new FileReader();
+  r.onload=()=>{cb(r.result);const el=$(prevId);if(el){el.src=r.result;el.style.display='block'}};
+  r.readAsDataURL(f);
+}
+function quickDiscount(id){
+  const p=prod(id);
+  const v=prompt('Процент отстъпка за „'+p.name+'“ (напр. 20):','20');
+  if(v===null)return;
+  const pct=parseFloat(v);
+  if(!(pct>0&&pct<95)){toast('Въведи процент между 1 и 94.');return}
+  p.old=p.price;p.price=+(p.price*(1-pct/100)).toFixed(2);
+  save();renderProducts();toast('Отстъпка −'+pct+'%: '+fmt(p.old)+' → '+fmt(p.price));
+}
+function clearDiscount(id){const p=prod(id);p.price=p.old;p.old=null;save();renderProducts();toast('Намалението е премахнато.')}
+function saveProduct(){
+  const name=$('pName').value.trim(),price=parseFloat($('pPrice').value);
+  if(!name||!(price>0)){toast('Име и валидна цена са задължителни.');return}
+  const old=parseFloat($('pOld').value)||null;
+  if(old&&old<=price){toast('Старата цена трябва да е по-висока от новата.');return}
+  const data={name,cat:$('pCat').value,price,old,
+    sizes:$('pSizes').value.split(',').map(s=>s.trim()).filter(Boolean),
+    stock:parseInt($('pStock').value)||0,desc:$('pDesc').value.trim()};
+  if(A.editPid){
+    Object.assign(prod(A.editPid),data);
+    if(A.imgData)prod(A.editPid).img=A.imgData;
+    toast('Продуктът е обновен ✓');
+  }else{
+    S.products.unshift({id:'p'+(S.seqProd++),created:Date.now(),active:true,img:A.imgData||art(S.seqProd,'shirt'),...data});
+    toast('Продуктът е публикуван ✓');
+  }
+  A.editPid=null;A.imgData=null;save();renderProducts();
+}
+function toggleProd(id){const p=prod(id);p.active=p.active===false;save();renderProducts()}
+function delProd(id){if(confirm('Да изтрия ли този продукт?')){S.products=S.products.filter(p=>p.id!==id);save();renderProducts()}}
+
+/* ---------- Категории ---------- */
+function renderCats(){
+  const c=S.cms;
+  $('amain').innerHTML=`
+    <div class="ahead"><h2>Категории</h2><span class="hint">Категориите са и менюто в хедъра, и колоната „Магазин“ във фуутъра.</span></div>
+    <div class="panel">
+      ${c.nav.map((n,i)=>{
+        const used=S.products.filter(p=>p.cat===n.cat).length;
+        return `<div class="listrow">
+          <button class="mini" ${i===0?'disabled':''} onclick="moveNav(${i},-1)">↑</button>
+          <button class="mini" ${i===c.nav.length-1?'disabled':''} onclick="moveNav(${i},1)">↓</button>
+          <input class="pill-in grow" value="${esc(n.label)}" onchange="S.cms.nav[${i}].label=this.value;save();renderCMS()" aria-label="Име">
+          <small class="hint" style="margin:0">${used} продукта</small>
+          <label class="switch" title="Показвай в сайта"><input type="checkbox" ${n.show?'checked':''} onchange="S.cms.nav[${i}].show=this.checked;save();renderCMS();toast(this.checked?'Категорията се показва.':'Категорията е скрита от сайта.')"><i></i></label>
+          <button class="mini" onclick="delNav(${i})">Изтрий</button>
+        </div>`}).join('')}
+      <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+        <input class="pill-in" id="newCat" placeholder="Нова категория, напр. Обувки">
+        <button class="mini dark" onclick="addNav()">+ Добави категория</button>
+      </div>
+      <p class="hint" style="margin-top:8px">Скритите категории изчезват от менютата, но продуктите им остават запазени.</p>
+    </div>`;
+}
+function moveNav(i,d){const n=S.cms.nav;[n[i],n[i+d]]=[n[i+d],n[i]];save();renderCMS();renderCats()}
+function addNav(){
+  const v=$('newCat').value.trim();if(!v){toast('Въведи име на категорията.');return}
+  if(S.cms.nav.find(n=>n.cat===v)){toast('Такава категория вече има.');return}
+  S.cms.nav.push({id:'n'+Date.now(),label:v,cat:v,show:true});
+  save();renderCMS();renderCats();toast('Категорията е добавена ✓');
+}
+function delNav(i){
+  const n=S.cms.nav[i];
+  const used=S.products.filter(p=>p.cat===n.cat).length;
+  if(used&&!confirm(used+' продукта са в „'+n.cat+'“. Категорията ще изчезне от менютата, продуктите остават. Продължи?'))return;
+  S.cms.nav.splice(i,1);save();renderCMS();renderCats();
+}
+
+/* ---------- Отстъпки ---------- */
+function renderPromos(){
+  $('amain').innerHTML=`
+    <div class="ahead"><h2>Кодове за отстъпка</h2></div>
+    <div class="panel"><h3>Нов промо код</h3>
+      <div class="frow3">
+        <div class="field"><label>Код *</label><input id="prCode" placeholder="ЛЯТО20" style="text-transform:uppercase"></div>
+        <div class="field"><label>Тип</label><select id="prType"><option value="percent">Процент (%)</option><option value="fixed">Фиксирана сума (EUR)</option></select></div>
+        <div class="field"><label>Стойност *</label><input id="prVal" type="number" step="0.01" placeholder="20"></div>
+      </div>
+      <div class="frow3">
+        <div class="field"><label>Минимална поръчка (EUR)</label><input id="prMin" type="number" step="0.01" value="0"></div>
+        <div class="field"><label>Валиден до</label><input id="prExp" type="date"></div>
+        <div class="field"><label>Лимит употреби (0 = без лимит)</label><input id="prLim" type="number" value="0"></div>
+      </div>
+      <button class="btn btn-tan" onclick="addPromo()">Създай кода</button>
+    </div>
+    <div class="panel"><h3>Всички кодове</h3>
+      ${S.promos.length?`<div style="overflow:auto"><table class="tbl"><thead><tr><th>Код</th><th>Отстъпка</th><th>Мин. поръчка</th><th>Валиден до</th><th>Употреби</th><th>Активен</th><th></th></tr></thead><tbody>
+      ${S.promos.map(p=>`<tr>
+        <td><b>${esc(p.code)}</b></td>
+        <td>${p.type==='percent'?'−'+p.value+'%':'−'+fmt(p.value)}</td>
+        <td>${p.minOrder?fmt(p.minOrder):'—'}</td>
+        <td>${p.expires||'безсрочен'}</td>
+        <td>${p.used}${p.limit?' / '+p.limit:''}</td>
+        <td><label class="switch"><input type="checkbox" ${p.active?'checked':''} onchange="togglePromo('${p.id}')"><i></i></label></td>
+        <td><button class="mini" onclick="delPromo('${p.id}')">Изтрий</button></td>
+      </tr>`).join('')}</tbody></table></div>`:'<p class="hint">Няма създадени кодове.</p>'}
+    </div>`;
+}
+function addPromo(){
+  const code=$('prCode').value.trim().toUpperCase(),val=parseFloat($('prVal').value);
+  if(!code||!(val>0)){toast('Въведи код и стойност.');return}
+  if(S.promos.find(p=>p.code.toUpperCase()===code)){toast('Този код вече съществува.');return}
+  S.promos.unshift({id:'pr'+Date.now(),code,type:$('prType').value,value:val,
+    minOrder:parseFloat($('prMin').value)||0,expires:$('prExp').value||'',
+    limit:parseInt($('prLim').value)||0,used:0,active:true});
+  save();renderPromos();toast('Кодът '+code+' е създаден ✓');
+}
+function togglePromo(id){const p=S.promos.find(p=>p.id===id);p.active=!p.active;save();toast(p.active?'Кодът е активиран.':'Кодът е спрян.')}
+function delPromo(id){if(confirm('Изтриване на кода?')){S.promos=S.promos.filter(p=>p.id!==id);save();renderPromos()}}
+
+/* ---------- Клиенти ---------- */
+function renderCustomers(){
+  const map={};
+  (S.users||[]).forEach(u=>map[u.email]={name:u.name,email:u.email,phone:u.phone||'',reg:true,orders:0,total:0});
+  S.orders.forEach(o=>{
+    const e=o.customer.email;
+    if(!map[e])map[e]={name:o.customer.name,email:e,phone:o.customer.phone,reg:false,orders:0,total:0};
+    if(o.status!=='Отказана'){map[e].orders++;map[e].total+=o.total}
+  });
+  const list=Object.values(map).sort((a,b)=>b.total-a.total);
+  $('amain').innerHTML=`
+    <div class="ahead"><h2>Клиенти</h2><span class="hint">${list.length} общо · ${list.filter(c=>c.reg).length} с регистрация</span></div>
+    <div class="panel">
+      ${list.length?`<div style="overflow:auto"><table class="tbl"><thead><tr><th>Клиент</th><th>Имейл</th><th>Телефон</th><th>Тип</th><th>Поръчки</th><th>Оборот</th><th></th></tr></thead><tbody>
+      ${list.map(c=>`<tr><td><b>${esc(c.name)}</b></td><td>${esc(c.email)}</td><td>${esc(c.phone)}</td>
+        <td><span class="status ${c.reg?'st-ship':'st-conf'}">${c.reg?'Регистриран':'Гост'}</span></td>
+        <td>${c.orders}</td><td><b>${fmt(c.total)}</b></td>
+        <td>${c.reg?`<button class="mini" onclick="msgOne('${esc(c.email)}','${esc(c.name)}')">✉ Съобщение</button>`:''}</td></tr>`).join('')}</tbody></table></div>`
+      :'<p class="hint">Още няма клиенти — първата поръчка ще се появи тук.</p>'}
+    </div>`;
+}
+async function msgOne(email,name){
+  const subject=prompt('Тема на съобщението до '+name+':');if(!subject)return;
+  const body=prompt('Текст на съобщението:');if(!body)return;
+  await sendCampaign({subject,body,channel:'inbox',audience:'one',email});
+  toast('Съобщението е изпратено в профила на '+name+' ✓');
+}
+
+/* ---------- Маркетинг ---------- */
+async function sendCampaign(c){
+  if(MODE==='api'){await api('/admin/campaign','POST',c,adminToken);
+    try{const st=await api('/admin/state','GET',null,adminToken);S.campaigns=st.campaigns;S.messages=st.messages;S.subscribers=st.subscribers}catch(e){}
+  }else{
+    const msg={date:new Date().toLocaleString('bg-BG',{dateStyle:'short',timeStyle:'short'}),subject:c.subject,body:c.body};
+    let count=0;
+    if(c.audience==='one'){(S.messages[c.email]=S.messages[c.email]||[]).unshift(msg);count=1}
+    else S.users.forEach(u=>{(S.messages[u.email]=S.messages[u.email]||[]).unshift(msg);count++});
+    S.campaigns.unshift({id:'c'+Date.now(),date:msg.date,subject:c.subject,body:c.body,channel:c.channel,audience:c.audience,sent:count});
+    save();
+  }
+}
+function renderMarketing(){
+  $('amain').innerHTML=`
+    <div class="ahead"><h2>Маркетинг кампании</h2></div>
+    <div class="panel"><h3>Ново съобщение / имейл</h3>
+      <div class="frow">
+        <div class="field"><label>Канал</label><select id="mkCh">
+          <option value="inbox">Съобщение в профила на клиента</option>
+          <option value="email">Имейл (изисква SMTP — виж бележката)</option>
+        </select></div>
+        <div class="field"><label>До кого</label><select id="mkAud">
+          <option value="users">Всички регистрирани клиенти</option>
+          <option value="subs">Абонати за новини</option>
+        </select></div>
+      </div>
+      <div class="field"><label>Тема *</label><input id="mkSubj" placeholder="напр. −20% само този уикенд"></div>
+      <div class="field"><label>Съдържание *</label><textarea id="mkBody" rows="5" placeholder="Здравей! Само до неделя всичко в категория Жени е с −20% с код ЛЯТО20…"></textarea></div>
+      <button class="btn btn-tan" onclick="fireCampaign()">Изпрати кампанията</button>
+      <p class="hint" style="margin-top:10px">Съобщенията в профила пристигат веднага (клиентът ги вижда при иконата „Профил“). За реални имейли бекендът има готова точка за свързване към SMTP услуга (напр. Brevo, Mailgun) — вписва се от разработчик с ключ от услугата.</p>
+    </div>
+    <div class="co-grid">
+      <div class="panel"><h3>Изпратени кампании</h3>
+        ${(S.campaigns||[]).length?S.campaigns.map(c=>`<div class="listrow"><div class="grow"><b>${esc(c.subject)}</b><br><small class="hint" style="margin:0">${c.date} · ${c.channel==='inbox'?'в профила':'имейл'} · достигнати: ${c.sent}</small></div></div>`).join(''):'<p class="hint">Още няма кампании.</p>'}
+      </div>
+      <div class="panel"><h3>Абонати за новини (${(S.subscribers||[]).length})</h3>
+        ${(S.subscribers||[]).map(s=>`<div class="rowline"><span>${esc(s.email)}</span><small class="hint" style="margin:0">${esc(s.date||'')}</small></div>`).join('')||'<p class="hint">Формата е във фуутъра на сайта.</p>'}
+      </div>
+    </div>`;
+}
+async function fireCampaign(){
+  const subject=$('mkSubj').value.trim(),body=$('mkBody').value.trim();
+  if(!subject||!body){toast('Попълни тема и съдържание.');return}
+  try{
+    await sendCampaign({subject,body,channel:$('mkCh').value,audience:$('mkAud').value});
+    toast('Кампанията е изпратена ✓');renderMarketing();
+  }catch(e){toast(e.message)}
+}
+
+/* ---------- Банери ---------- */
+let banImgTmp=null;
+function renderBanners(){
+  $('amain').innerHTML=`
+    <div class="ahead"><h2>Банери на началната страница</h2><span class="hint">Показват се под голямата секция, водят към категория.</span></div>
+    <div class="panel"><h3>Нов банер</h3>
+      <div class="frow3">
+        <div class="field"><label>Заглавие *</label><input id="bnTitle" placeholder="Нова колекция за жени"></div>
+        <div class="field"><label>Малък надпис</label><input id="bnSub" placeholder="Разгледай"></div>
+        <div class="field"><label>Води към категория</label><select id="bnCat">${S.cms.nav.map(n=>`<option value="${esc(n.cat)}">${esc(n.label)}</option>`).join('')}</select></div>
+      </div>
+      <div class="uploader" style="padding:16px" onclick="$('bnImg').click()">⇪ Снимка за банера (по желание)<img id="bnPrev" style="display:none"></div>
+      <input type="file" id="bnImg" accept="image/*" style="display:none" onchange="pickImg(this,'bnPrev',d=>banImgTmp=d,1)">
+      <button class="btn btn-tan" style="margin-top:14px" onclick="addBanner()">Добави банера</button>
+    </div>
+    <div class="panel"><h3>Активни банери</h3>
+      ${S.banners.map((b,i)=>`
+        <div class="banrow">
+          <div class="bim">${b.img?`<img src="${b.img}">`:''}</div>
+          <div class="grow"><b>${esc(b.title)}</b><br><small class="hint" style="margin:0">${esc(b.sub)} → ${esc(b.cat)}</small></div>
+          <button class="mini" ${i===0?'disabled':''} onclick="moveBan(${i},-1)">↑</button>
+          <button class="mini" ${i===S.banners.length-1?'disabled':''} onclick="moveBan(${i},1)">↓</button>
+          <label class="switch"><input type="checkbox" ${b.show?'checked':''} onchange="S.banners[${i}].show=this.checked;save();renderCMS()"><i></i></label>
+          <button class="mini" onclick="S.banners.splice(${i},1);save();renderCMS();renderBanners()">Изтрий</button>
+        </div>`).join('')||'<p class="hint">Няма банери.</p>'}
+    </div>`;
+}
+function addBanner(){
+  const title=$('bnTitle').value.trim();
+  if(!title){toast('Въведи заглавие.');return}
+  S.banners.push({id:'b'+Date.now(),title,sub:$('bnSub').value.trim(),cat:$('bnCat').value,img:banImgTmp||'',show:true});
+  banImgTmp=null;save();renderCMS();renderBanners();toast('Банерът е добавен ✓');
+}
+function moveBan(i,d){const b=S.banners;[b[i],b[i+d]]=[b[i+d],b[i]];save();renderCMS();renderBanners()}
+
+/* ---------- Дизайн (цветове, шрифтове, лого) ---------- */
+function renderDesign(){
+  const t=S.theme;
+  $('amain').innerHTML=`
+    <div class="ahead"><h2>Дизайн</h2><span class="hint">Промените се прилагат веднага върху целия сайт.</span></div>
+    <div class="panel"><h3>Цветове на бранда</h3>
+      <div class="frow">
+        <div class="field"><label>Основен (тъмен) цвят</label><div class="swatch"><input type="color" value="${t.ink}" onchange="S.theme.ink=this.value;applyTheme();save()"><span class="hint" style="margin:0">Хедър, фуутър, бутони, текст</span></div></div>
+        <div class="field"><label>Акцентен (златист) цвят</label><div class="swatch"><input type="color" value="${t.tan}" onchange="S.theme.tan=this.value;applyTheme();save()"><span class="hint" style="margin:0">Акценти, етикети, светли фонове — нюансите се изчисляват автоматично</span></div></div>
+      </div>
+      <button class="mini" onclick="S.theme.ink='#2A2A28';S.theme.tan='#C2A278';applyTheme();save();renderDesign();toast('Цветовете са върнати към оригинала.')">↺ Върни оригиналните цветове от логото</button>
+    </div>
+    <div class="panel"><h3>Шрифтове</h3>
+      <div class="radio-cards">
+        ${Object.entries(FONTS).map(([k,f])=>`
+          <div class="fontprev ${t.fontPair===k?'on':''}" onclick="S.theme.fontPair='${k}';applyTheme();save();renderDesign()">
+            <div class="fs" style="font-family:${f.serif}">Стилът е подбор, не случайност.</div>
+            <small style="font-family:${f.sans};color:var(--ink-mute)">${f.name} — основен текст с този шрифт</small>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="panel"><h3>Лого и име на магазина</h3>
+      <div class="frow">
+        <div class="field"><label>Име (голяма част)</label><input value="${esc(t.siteName)}" onchange="S.theme.siteName=this.value;save();renderCMS()"></div>
+        <div class="field"><label>Окончание (златна част)</label><input value="${esc(t.siteTld)}" onchange="S.theme.siteTld=this.value;save();renderCMS()"></div>
+      </div>
+      <span class="lbl">Изглед на логото в хедъра</span>
+      <div class="radio-cards">
+        <label class="rcard ${t.logoMode==='svg'?'on':''}" onclick="S.theme.logoMode='svg';save();renderCMS();renderDesign()"><span class="dot"></span><span><b>Фирменият знак (закачалка + S)</b><small>Вграденото лого в цветовете на бранда</small></span></label>
+        <label class="rcard ${t.logoMode==='img'?'on':''}" onclick="S.theme.logoMode='img';save();renderCMS();renderDesign()"><span class="dot"></span><span><b>Качена снимка на лого</b><small>Твоят файл (PNG с прозрачен фон изглежда най-добре)</small></span></label>
+        <label class="rcard ${t.logoMode==='text'?'on':''}" onclick="S.theme.logoMode='text';save();renderCMS();renderDesign()"><span class="dot"></span><span><b>Само текст</b><small>Без знак — само името на магазина</small></span></label>
+      </div>
+      ${t.logoMode==='img'?`
+      <div class="uploader" style="margin-top:14px" onclick="$('lgImg').click()">⇪ Качи лого (PNG/JPG/SVG)<img id="lgPrev" src="${t.logoImg||''}" style="${t.logoImg?'':'display:none'};max-height:80px"></div>
+      <input type="file" id="lgImg" accept="image/*" style="display:none" onchange="pickImg(this,'lgPrev',d=>{S.theme.logoImg=d;save();renderCMS()},0.5)">`:''}
+    </div>`;
+}
+
+/* ---------- Текстове ---------- */
+function renderCmsAdmin(){
+  const c=S.cms;
+  $('amain').innerHTML=`
+    <div class="ahead"><h2>Текстове на сайта</h2></div>
+    <div class="panel"><h3>Начална страница</h3>
+      <div class="field"><label>Лента най-горе (topbar)</label><input id="cmTopbar" value="${esc(c.topbar)}"></div>
+      <div class="frow">
+        <div class="field"><label>Малък надпис над заглавието</label><input id="cmEyebrow" value="${esc(c.heroEyebrow)}"></div>
+        <div class="field"><label>Бягащ ред</label><input id="cmMarquee" value="${esc(c.marquee)}"></div>
+      </div>
+      <div class="field"><label>Голямо заглавие — думата между * * става златиста</label><input id="cmTitle" value="${esc(c.heroTitle)}"></div>
+      <div class="field"><label>Подзаглавие</label><textarea id="cmSub" rows="2">${esc(c.heroSub)}</textarea></div>
+      <div class="frow">
+        <div class="field"><label>Текст за магазина във фуутъра</label><input id="cmAbout" value="${esc(c.footAbout)}"></div>
+        <div class="field"><label>Ред най-долу (copyright)</label><input id="cmFin" value="${esc(c.footFin)}"></div>
+      </div>
+      <button class="btn btn-tan" onclick="saveCmsTexts()">Запази текстовете</button>
+    </div>`;
+}
+function saveCmsTexts(){
+  Object.assign(S.cms,{topbar:$('cmTopbar').value,heroEyebrow:$('cmEyebrow').value,marquee:$('cmMarquee').value,
+    heroTitle:$('cmTitle').value,heroSub:$('cmSub').value,footAbout:$('cmAbout').value,footFin:$('cmFin').value});
+  save();renderCMS();toast('Текстовете са обновени ✓');
+}
+
+/* ---------- Страници ---------- */
+let editPageId=null;
+function renderPages(){
+  const c=S.cms;
+  const e=editPageId?c.pages.find(p=>p.id===editPageId):null;
+  $('amain').innerHTML=`
+    <div class="ahead"><h2>Страници</h2><span class="hint">Общи условия, поверителност и всякакви други — показват се във фуутъра.</span></div>
+    <div class="panel"><h3>${e?'Редакция: '+esc(e.title):'Нова страница'}</h3>
+      <div class="field"><label>Заглавие *</label><input id="pgTitle" value="${esc(e?.title||'')}" placeholder="напр. Начини на плащане"></div>
+      <div class="field"><label>Съдържание *</label><textarea id="pgBody" rows="10">${esc(e?.body||'')}</textarea>
+      <p class="hint">Нов ред = нов абзац.</p></div>
+      <div style="display:flex;gap:10px">
+        <button class="btn btn-tan" onclick="savePage()">${e?'Запази промените':'Създай страницата'}</button>
+        ${e?'<button class="btn btn-line" onclick="editPageId=null;renderPages()">Отказ</button>':''}
+      </div>
+    </div>
+    <div class="panel"><h3>Всички страници (${c.pages.length})</h3>
+      ${c.pages.map((p,i)=>`
+        <div class="listrow">
+          <div class="grow"><b>${esc(p.title)}</b><br><small class="hint" style="margin:0">${esc(p.body.slice(0,90))}…</small></div>
+          <label class="switch" title="Показвай във фуутъра"><input type="checkbox" ${p.show?'checked':''} onchange="S.cms.pages[${i}].show=this.checked;save();renderCMS();toast(this.checked?'Страницата се показва.':'Страницата е скрита.')"><i></i></label>
+          <button class="mini" onclick="openPage('${p.id}')">Преглед</button>
+          <button class="mini dark" onclick="editPageId='${p.id}';renderPages()">Редакция</button>
+          <button class="mini" onclick="delPage(${i})">Изтрий</button>
+        </div>`).join('')}
+    </div>`;
+}
+function savePage(){
+  const title=$('pgTitle').value.trim(),body=$('pgBody').value.trim();
+  if(!title||!body){toast('Попълни заглавие и съдържание.');return}
+  if(editPageId){const p=S.cms.pages.find(p=>p.id===editPageId);p.title=title;p.body=body;toast('Страницата е обновена ✓')}
+  else{S.cms.pages.push({id:'pg'+Date.now(),title,body,show:true});toast('Страницата е създадена ✓')}
+  editPageId=null;save();renderCMS();renderPages();
+}
+function delPage(i){if(confirm('Изтриване на „'+S.cms.pages[i].title+'“?')){S.cms.pages.splice(i,1);save();renderCMS();renderPages()}}
+
+/* ---------- SEO ---------- */
+function renderSeo(){
+  const s=S.seo;
+  $('amain').innerHTML=`
+    <div class="ahead"><h2>SEO оптимизация</h2></div>
+    <div class="panel"><h3>Мета данни на сайта <small>— как изглежда магазинът в Google и при споделяне</small></h3>
+      <div class="field"><label>Заглавие (title) — до ~60 знака</label><input id="seoT" value="${esc(s.title)}" maxlength="70"></div>
+      <div class="field"><label>Описание (meta description) — до ~160 знака</label><textarea id="seoD" rows="2" maxlength="170">${esc(s.desc)}</textarea></div>
+      <div class="field"><label>Ключови думи (със запетая)</label><input id="seoK" value="${esc(s.keywords)}"></div>
+      <button class="btn btn-tan" onclick="saveSeo()">Запази SEO настройките</button>
+    </div>
+    <div class="panel"><h3>Преглед в Google</h3>
+      <div style="border:1px solid var(--line);border-radius:12px;padding:16px;max-width:600px">
+        <div style="color:#1a0dab;font-size:18px;font-family:Arial">${esc(s.title)}</div>
+        <div style="color:#006621;font-size:13px;font-family:Arial">https://твоят-домейн.bg</div>
+        <div style="color:#545454;font-size:13px;font-family:Arial">${esc(s.desc)}</div>
+      </div>
+    </div>
+    <div class="panel"><h3>Автоматично от бекенда</h3>
+      <p class="hint">Когато сайтът върви със сървъра, той автоматично: вгражда тези мета данни в страницата за търсачките, генерира <b>/sitemap.xml</b> с категориите и страниците и обслужва <b>/robots.txt</b>. В локален режим се сменя само заглавието на таба.</p>
+    </div>`;
+}
+function saveSeo(){
+  Object.assign(S.seo,{title:$('seoT').value,desc:$('seoD').value,keywords:$('seoK').value});
+  save();renderCMS();toast('SEO настройките са запазени ✓');
+}
+
+/* ---------- Фактури ---------- */
+async function makeInvoice(orderId){
+  const o=S.orders.find(o=>o.id===orderId);
+  const recName=prompt('Получател по фактурата (име на фирма или лице):',o.customer.name);if(recName===null)return;
+  const recEIK=prompt('ЕИК / ЕГН на получателя (по желание за физ. лице):','')??'';
+  const recVAT=recEIK?(prompt('ЗДДС № на получателя (ако е регистриран):','')??''):'';
+  const recAddr=prompt('Адрес на получателя:',o.delivery.place)??o.delivery.place;
+  const recipient={name:recName,eik:recEIK,vat:recVAT,addr:recAddr};
+  try{
+    if(MODE==='api'){
+      const r=await api('/admin/orders/'+orderId+'/invoice','POST',{recipient},adminToken);
+      S.invoices.unshift(r.invoice);o.invoiceId=r.invoice.id;
+      toast('Фактура № '+r.invoice.num+' ✓');showInvoice(r.invoice.id);
+      return;
+    }
+    const num=String(S.seqInv++).padStart(10,'0');
+    const base=+(o.total/1.2).toFixed(2),vat=+(o.total-base).toFixed(2);
+    const inv={id:'inv'+Date.now(),num,date:new Date().toLocaleDateString('bg-BG'),orderNum:o.num,orderId:o.id,recipient,
+      items:[...o.items.map(i=>({name:i.name+' (размер '+i.size+')',qty:i.qty,price:i.price})),
+        ...(o.discount?[{name:'Търговска отстъпка (код '+(o.promo||'')+')',qty:1,price:-o.discount}]:[]),
+        ...(o.delivery.price?[{name:'Доставка '+o.delivery.carrier,qty:1,price:o.delivery.price}]:[])],
+      base,vat,total:o.total,payment:o.payment};
+    S.invoices.unshift(inv);o.invoiceId=inv.id;save();
+    toast('Фактура № '+num+' е издадена ✓');showInvoice(inv.id);
+  }catch(e){toast(e.message)}
+}
+function showInvoice(id){
+  const v=S.invoices.find(i=>i.id===id),c=S.settings;
+  $('invprint').innerHTML=`
+  <div class="invoice">
+    <div class="top">
+      <div><h1>ФАКТУРА</h1><div class="orig">Оригинал</div></div>
+      <div class="num"><b>№ ${v.num}</b><br>Дата на издаване: ${v.date}<br>Дата на данъчно събитие: ${v.date}<br>Към поръчка: ${v.orderNum}</div>
+    </div>
+    <div class="inv-parties">
+      <div class="box"><h5>Доставчик</h5>
+        <p><b>${esc(c.company)}</b></p><p>ЕИК: ${esc(c.eik)}</p>
+        ${c.vatReg?`<p>ЗДДС №: ${esc(c.vat)}</p>`:''}
+        <p>Адрес: ${esc(c.addr)}</p><p>МОЛ: ${esc(c.mol)}</p></div>
+      <div class="box"><h5>Получател</h5>
+        <p><b>${esc(v.recipient.name)}</b></p>
+        ${v.recipient.eik?`<p>ЕИК/ЕГН: ${esc(v.recipient.eik)}</p>`:''}
+        ${v.recipient.vat?`<p>ЗДДС №: ${esc(v.recipient.vat)}</p>`:''}
+        <p>Адрес: ${esc(v.recipient.addr)}</p></div>
+    </div>
+    <table class="inv"><thead><tr>
+      <th style="width:32px">№</th><th>Наименование на стоката / услугата</th><th class="r">Мярка</th><th class="r">Кол.</th><th class="r">Ед. цена с ДДС</th><th class="r">Сума с ДДС</th>
+    </tr></thead><tbody>
+      ${v.items.map((i,x)=>`<tr><td>${x+1}</td><td>${esc(i.name)}</td><td class="r">бр.</td><td class="r">${i.qty}</td><td class="r">${fmt(i.price)}</td><td class="r">${fmt(i.price*i.qty)}</td></tr>`).join('')}
+    </tbody></table>
+    <div class="inv-tot">
+      <div class="rw"><span>Данъчна основа (20%)</span><span>${fmt(v.base)}</span></div>
+      <div class="rw"><span>ДДС 20%</span><span>${fmt(v.vat)}</span></div>
+      <div class="rw grand"><span>Сума за плащане</span><span>${fmt(v.total)}</span></div>
+      <div class="rw" style="color:var(--ink-mute);font-size:12px"><span>Равностойност</span><span>${bgn(v.total)} (курс ${RATE})</span></div>
+    </div>
+    <div class="inv-meta">
+      <span><b>Начин на плащане:</b> ${v.payment}</span>
+      <span><b>Основание на сделката:</b> Продажба на стоки — онлайн поръчка ${v.orderNum}</span>
+      <span><b>Банка:</b> ${esc(c.bank)}</span>
+      <span><b>IBAN:</b> ${esc(c.iban)}</span>
+    </div>
+    <div class="inv-sign">
+      <div class="s">Съставил: ${esc(c.mol)}</div>
+      <div class="s">Получил: ${esc(v.recipient.name)}</div>
+    </div>
+    <div class="inv-note">Фактурата е издадена съгласно чл. 114 от ЗДДС. Съгласно Закона за счетоводството печат и подпис не са задължителни реквизити.</div>
+  </div>`;
+  openModal('invM');
+}
+function printInvoice(){
+  document.body.classList.add('printing');
+  window.print();
+  setTimeout(()=>document.body.classList.remove('printing'),500);
+}
+function renderInvoices(){
+  $('amain').innerHTML=`
+    <div class="ahead"><h2>Фактури</h2></div>
+    <div class="panel">
+    ${S.invoices.length?`<div style="overflow:auto"><table class="tbl"><thead><tr><th>№</th><th>Дата</th><th>Получател</th><th>Поръчка</th><th>Осн.</th><th>ДДС</th><th>Общо</th><th></th></tr></thead><tbody>
+      ${S.invoices.map(v=>`<tr><td><b>${v.num}</b></td><td>${v.date}</td><td>${esc(v.recipient.name)}</td><td>${v.orderNum}</td><td>${fmt(v.base)}</td><td>${fmt(v.vat)}</td><td><b>${fmt(v.total)}</b></td>
+        <td><button class="mini dark" onclick="showInvoice('${v.id}')">Преглед / Печат</button></td></tr>`).join('')}
+    </tbody></table></div>`:'<p class="hint">Няма издадени фактури. Отвори поръчка и натисни „Издай фактура“.</p>'}
+    </div>`;
+}
+
+/* ---------- Настройки ---------- */
+function renderSettings(){
+  const c=S.settings;
+  $('amain').innerHTML=`
+    <div class="ahead"><h2>Настройки</h2></div>
+    <div class="panel"><h3>Магазин</h3>
+      <label class="rcard ${c.maintenance?'on':''}" onclick="S.settings.maintenance=!S.settings.maintenance;save();renderCMS();renderSettings()"><span class="dot"></span><span><b>Режим на профилактика</b><small>Скрива възможността за поръчки и показва съобщение най-горе в сайта</small></span></label>
+    </div>
+    <div class="panel"><h3>Данни за фактуриране</h3>
+      <div class="frow">
+        <div class="field"><label>Фирма</label><input id="sCompany" value="${esc(c.company)}"></div>
+        <div class="field"><label>МОЛ</label><input id="sMol" value="${esc(c.mol)}"></div>
+      </div>
+      <div class="frow">
+        <div class="field"><label>ЕИК</label><input id="sEik" value="${esc(c.eik)}"></div>
+        <div class="field"><label>ЗДДС №</label><input id="sVat" value="${esc(c.vat)}"></div>
+      </div>
+      <div class="field"><label>Адрес на управление</label><input id="sAddr" value="${esc(c.addr)}"></div>
+      <div class="frow">
+        <div class="field"><label>Банка</label><input id="sBank" value="${esc(c.bank)}"></div>
+        <div class="field"><label>IBAN</label><input id="sIban" value="${esc(c.iban)}"></div>
+      </div>
+      <div class="field"><label>Следващ номер на фактура</label><input id="sSeq" type="number" value="${S.seqInv}"><p class="hint">Номерата са 10-значни, последователни, без пропуски (чл. 114 ЗДДС).</p></div>
+    </div>
+    <div class="panel"><h3>Контакти <small>— фуутър и страница „Контакти“</small></h3>
+      <div class="frow3">
+        <div class="field"><label>Имейл</label><input id="sCem" value="${esc(c.contactEmail)}"></div>
+        <div class="field"><label>Телефон</label><input id="sCph" value="${esc(c.contactPhone)}"></div>
+        <div class="field"><label>Град</label><input id="sCct" value="${esc(c.contactCity)}"></div>
+      </div>
+    </div>
+    <div class="panel"><h3>Доставка</h3>
+      <div class="frow">
+        <div class="field"><label>Безплатна доставка над (EUR)</label><input id="sFree" type="number" step="0.01" value="${c.freeShip}"></div>
+        <div class="field"><label>Праг „ниска наличност“ (бр.)</label><input id="sLow" type="number" value="${c.lowStock}"></div>
+      </div>
+      <div class="frow">
+        <div class="field"><label>Еконт — до офис (EUR)</label><input id="sEo" type="number" step="0.01" value="${c.ship.eo}"></div>
+        <div class="field"><label>Еконт — до адрес (EUR)</label><input id="sEa" type="number" step="0.01" value="${c.ship.ea}"></div>
+      </div>
+      <div class="frow">
+        <div class="field"><label>Спиди — до офис (EUR)</label><input id="sSo" type="number" step="0.01" value="${c.ship.so}"></div>
+        <div class="field"><label>Спиди — до адрес (EUR)</label><input id="sSa" type="number" step="0.01" value="${c.ship.sa}"></div>
+      </div>
+    </div>
+    <div class="panel"><h3>Интеграция с Еконт</h3>
+      <label class="rcard ${c.econt.demo?'':'on'}" style="margin-bottom:14px" onclick="S.settings.econt.demo=!S.settings.econt.demo;save();renderSettings()"><span class="dot"></span><span><b>${c.econt.demo?'ДЕМО режим (номерата се генерират локално)':'РЕАЛЕН режим — товарителниците се създават в Еконт'}</b><small>Кликни за превключване. За реален режим попълни данните си от ee.econt.com по-долу.</small></span></label>
+      <div class="frow">
+        <div class="field"><label>Потребител в e-Econt</label><input id="sEcU" value="${esc(c.econt.user)}"></div>
+        <div class="field"><label>Парола</label><input id="sEcP" type="password" value="${esc(c.econt.pass)}"></div>
+      </div>
+      <div class="frow">
+        <div class="field"><label>Име на подател (за товарителницата)</label><input id="sEcN" value="${esc(c.econt.senderName)}"></div>
+        <div class="field"><label>Град на подателя</label><input id="sEcC" value="${esc(c.econt.senderCity)}"></div>
+      </div>
+      <div class="frow">
+        <div class="field"><label>Пощенски код</label><input id="sEcZ" value="${esc(c.econt.senderPost)}"></div>
+        <div class="field"><label>Адрес / офис на подателя</label><input id="sEcS" value="${esc(c.econt.senderStreet)}"></div>
+      </div>
+      <p class="hint">Тестовата среда на Еконт (demo.econt.com) ползва iasp-dev / 1Asp-dev — с нея може да пробваш реални заявки без договор. Когато получиш свой акаунт от ee.econt.com, впиши го тук и изключи демо режима.</p>
+    </div>
+    <div class="panel"><h3>Спиди и карти</h3>
+      <div class="frow">
+        <div class="field"><label>Спиди — потребител (api.speedy.bg)</label><input id="sSpU" value="${esc(c.speedy.user)}"></div>
+        <div class="field"><label>Спиди — парола</label><input id="sSpP" type="password" value="${esc(c.speedy.pass)}"></div>
+      </div>
+      <div class="field"><label>Виртуален POS за карти</label><input id="sVpos" value="${esc(c.vpos.provider)}"><p class="hint">Borica, myPOS, Stripe или SumUp — свързва се с ключовете от банката/доставчика.</p></div>
+    </div>
+    <div class="panel"><h3>Сигурност</h3>
+      <div class="field"><label>Парола за бекофиса</label><input id="sPass" type="password" value="${esc(c.adminPass)}"></div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn btn-tan" onclick="saveSettings()">Запази всички настройки</button>
+      <button class="btn btn-line" onclick="resetShop()">Нулирай магазина</button>
+    </div>`;
+}
+function saveSettings(){
+  const c=S.settings;
+  Object.assign(c,{company:$('sCompany').value,mol:$('sMol').value,eik:$('sEik').value,vat:$('sVat').value,
+    addr:$('sAddr').value,bank:$('sBank').value,iban:$('sIban').value,
+    contactEmail:$('sCem').value,contactPhone:$('sCph').value,contactCity:$('sCct').value,
+    freeShip:parseFloat($('sFree').value)||c.freeShip,lowStock:parseInt($('sLow').value)||c.lowStock,
+    adminPass:$('sPass').value||c.adminPass});
+  c.ship={eo:parseFloat($('sEo').value)||c.ship.eo,ea:parseFloat($('sEa').value)||c.ship.ea,so:parseFloat($('sSo').value)||c.ship.so,sa:parseFloat($('sSa').value)||c.ship.sa};
+  Object.assign(c.econt,{user:$('sEcU').value,pass:$('sEcP').value,senderName:$('sEcN').value,senderCity:$('sEcC').value,senderPost:$('sEcZ').value,senderStreet:$('sEcS').value});
+  c.speedy.user=$('sSpU').value;c.speedy.pass=$('sSpP').value;
+  c.vpos.provider=$('sVpos').value;
+  S.seqInv=parseInt($('sSeq').value)||S.seqInv;
+  save();renderCMS();toast('Настройките са запазени ✓');
+}
+async function resetShop(){
+  if(!confirm('Пълно нулиране на магазина до демо данните?'))return;
+  if(MODE==='api'){try{await api('/admin/reset','POST',{},adminToken);const st=await api('/admin/state','GET',null,adminToken);S=merge(defaults(),st);S.products.forEach((p,i)=>{if(!p.img)p.img=art(i,p.type||'shirt')})}catch(e){toast(e.message);return}}
+  else{S=defaults();save()}
+  renderShell();renderCMS();renderCatalog();toast('Магазинът е нулиран.');
+}
+
+/* ---------- Старт ---------- */
+(async function init(){
+  await loadState();
+  renderCMS();renderCatalog();renderCartBadge();
+  if(location.hash==='#admin')openAdmin();
+  window.addEventListener('hashchange',()=>{if(location.hash==='#admin')openAdmin()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeAll();document.querySelectorAll('.modal.show').forEach(m=>m.classList.remove('show'))}});
+})();
+</script>
+</body>
+</html>
